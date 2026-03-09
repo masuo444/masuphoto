@@ -56,12 +56,38 @@ img {
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--gold);
+    text-decoration: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.lang-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.lang-toggle:hover {
+    color: var(--gold);
+    border-color: var(--gold);
 }
 
 .site-header nav {
     display: flex;
     gap: 18px;
     font-size: 12px;
+    margin-left: auto;
 }
 
 .site-header nav a {
@@ -328,12 +354,11 @@ section {
 
 .book-cover {
     position: relative;
-    width: 100%;
-    max-width: 220px;
-    min-width: 220px;
-    aspect-ratio: 3 / 4;
+    width: 220px;
+    height: 302px;
     border-radius: 4px;
     overflow: hidden;
+    flex-shrink: 0;
     transform: translateY(0);
     transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
@@ -423,154 +448,210 @@ section {
     margin-bottom: 2rem;
 }
 
+/* =========================================
+   COMING NEXT + PARTNERSHIP — Premium
+   ========================================= */
 .section-future {
-    padding: clamp(80px, 9vw, 140px) clamp(24px, 10vw, 200px);
-    background: radial-gradient(circle at top left, rgba(215, 188, 117, 0.08), transparent 55%),
-        linear-gradient(140deg, rgba(10, 10, 10, 0.95), #030303 70%);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.future-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(260px, 320px) minmax(320px, 1fr);
-    gap: clamp(40px, 6vw, 80px);
-    align-items: center;
-}
-
-.future-card {
-    border: 1px solid rgba(215, 188, 117, 0.4);
-    border-radius: 36px;
-    padding: clamp(32px, 5vw, 48px);
     position: relative;
-    background: radial-gradient(circle at 20% 20%, rgba(215, 188, 117, 0.15), rgba(0, 0, 0, 0.75));
-    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+    padding: clamp(100px, 12vw, 180px) clamp(24px, 8vw, 160px);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.future-card::after {
-    content: "";
+.future-bg {
     position: absolute;
-    inset: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 30px;
-    pointer-events: none;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 45% 60% at 50% 0%, rgba(215, 188, 117, 0.07), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(215, 188, 117, 0.04), transparent),
+        linear-gradient(180deg, #060606, #0a0a0a 50%, #060606);
+    z-index: 0;
 }
 
-.future-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.5em;
+.future-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- Coming Next --- */
+.future-next {
+    margin-bottom: 0;
+}
+
+.future-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.8em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 1rem;
-}
-
-.future-label.subtle {
-    color: rgba(245, 241, 230, 0.5);
+    margin: 0 0 1.5rem;
+    opacity: 0.8;
 }
 
 .future-year {
-    font-size: clamp(2.4rem, 5vw, 3.4rem);
-    letter-spacing: 0.25em;
-    margin: 0 0 1rem;
+    font-size: clamp(4rem, 10vw, 7rem);
+    font-family: "Shippori Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    margin: 0;
+    color: var(--text);
+    line-height: 1;
+    background: linear-gradient(180deg, rgba(245, 241, 230, 1), rgba(215, 188, 117, 0.6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.future-caption {
+.future-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 2rem auto;
+}
+
+.future-tagline {
     font-size: 0.95rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(245, 241, 230, 0.85);
+    line-height: 2.2;
+    color: rgba(245, 241, 230, 0.45);
+    margin: 0;
+    letter-spacing: 0.04em;
 }
 
-.future-partner {
-    padding-left: clamp(0px, 4vw, 20px);
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.future-copy {
-    font-size: 1.05rem;
-    line-height: 2;
-    margin: 1rem 0 1.5rem;
-}
-
-.future-sub {
-    color: rgba(245, 241, 230, 0.7);
-    margin-bottom: 2rem;
-}
-
-.section-future .btn-partner {
-    display: inline-flex;
+/* --- Divider --- */
+.future-divider {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    min-width: 200px;
+    padding: clamp(50px, 6vw, 80px) 0;
+}
+
+.future-divider-dot {
+    width: 6px;
+    height: 6px;
     border: 1px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.5;
+    position: relative;
+}
+
+.future-divider-dot::before,
+.future-divider-dot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: clamp(60px, 12vw, 140px);
+    background: linear-gradient(to right, transparent, rgba(215, 188, 117, 0.2));
+}
+
+.future-divider-dot::before {
+    right: 20px;
+    background: linear-gradient(to left, transparent, rgba(215, 188, 117, 0.2));
+}
+
+.future-divider-dot::after {
+    left: 20px;
+}
+
+/* --- Partnership --- */
+.future-partnership {
+    text-align: center;
+}
+
+.future-headline {
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-family: "Shippori Mincho", serif;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    margin: 0 0 2.5rem;
+    color: var(--text);
+}
+
+.future-cols {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 48px);
+    text-align: left;
+}
+
+.future-text {
+    font-size: 0.9rem;
+    line-height: 2.2;
+    color: rgba(245, 241, 230, 0.5);
+    margin: 0;
+}
+
+.future-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 48px;
+    border: 1px solid rgba(215, 188, 117, 0.4);
     color: var(--gold);
+    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 999px;
-    transition: background 0.3s ease, color 0.3s ease;
+    font-size: 0.7rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.section-future .btn-partner::after {
-    content: "→";
-    font-size: 0.8rem;
-}
-
-.section-future .btn-partner:hover {
+.future-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: 0;
+}
+
+.future-cta:hover::before {
+    transform: scaleX(1);
+}
+
+.future-cta-text,
+.future-cta-arrow {
+    position: relative;
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+.future-cta:hover .future-cta-text,
+.future-cta:hover .future-cta-arrow {
     color: #050505;
 }
 
-.future-card,
-.future-partner {
-    position: relative;
+.future-cta-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease, color 0.4s ease;
 }
 
-.future-card::before,
-.future-partner::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: -30px;
-    width: 80px;
-    height: 80px;
-    border: 1px solid rgba(215, 188, 117, 0.18);
-    border-radius: 40% 60% 50% 50%;
-    filter: blur(0.5px);
-    opacity: 0.4;
-    pointer-events: none;
+.future-cta:hover .future-cta-arrow {
+    transform: translateX(4px);
 }
 
-.future-partner::before {
-    top: auto;
-    bottom: -30px;
-    right: -40px;
-    left: auto;
-}
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .section-future {
+        padding: clamp(70px, 16vw, 120px) 20px;
+    }
 
-.future-partner {
-    position: relative;
-    padding: clamp(24px, 3vw, 32px);
-}
-
-@media (max-width: 900px) {
-    .future-inner {
+    .future-cols {
         grid-template-columns: 1fr;
+        text-align: center;
     }
 
-    .future-partner {
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        padding-top: clamp(24px, 6vw, 40px);
-        margin-top: clamp(16px, 4vw, 32px);
-    }
-
-    .future-card::before,
-    .future-partner::before {
-        display: none;
+    .future-cta {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -729,6 +810,69 @@ section {
     background: #f4e7c1;
     color: #050505;
     border-color: #f4e7c1;
+}
+
+/* --- Sponsors --- */
+.section-sponsors {
+    padding: clamp(80px, 10vw, 120px) clamp(24px, 8vw, 160px);
+    background: var(--background);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+}
+
+.sponsors-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sponsors-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+}
+
+.sponsors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sponsor-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.08);
+}
+
+.sponsor-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .sponsor-card {
+        width: 100px;
+        height: 100px;
+        padding: 12px;
+    }
+
+    .sponsors-grid {
+        gap: 14px;
+    }
 }
 
 .creator-credit {
@@ -969,9 +1113,9 @@ section {
     }
 
     .book-cover {
-        max-width: none;
-        min-width: auto;
         width: 100%;
+        height: auto;
+        aspect-ratio: 8 / 11;
     }
 
     .book-meta {
@@ -995,31 +1139,6 @@ section {
 
     .pass-panel {
         width: 100%;
-    }
-
-    .section-future {
-        padding: clamp(70px, 16vw, 110px) 20px;
-    }
-
-    .future-inner {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .future-card,
-    .future-partner {
-        padding: 26px;
-    }
-
-    .future-partner {
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        margin-top: 6px;
-    }
-
-    .section-future .btn-partner {
-        width: 100%;
-        justify-content: center;
     }
 
     .creator-credit {

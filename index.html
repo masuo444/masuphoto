@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
     <title>MASU PHOTO ONLINE ARCHIVE</title>
     <meta name="description" content="MASU PHOTO ONLINE ARCHIVEは、世界を旅する枡フォト写真集と思想を静かに体験するオンラインアーカイブです。">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet">
@@ -14,16 +20,17 @@
     <div class="noise"></div>
     <header class="site-header">
         <div class="brand">MASU PHOTO</div>
-        <button class="menu-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="site-menu">
-            <span></span>
-            <span></span>
-        </button>
+        <div class="header-right">
+            <button class="lang-toggle" aria-label="Toggle language" data-lang-toggle>EN / JA</button>
+            <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
         <nav id="site-menu">
             <a href="#home">Home</a>
             <a href="#photo-books">Photo Books</a>
-            <a href="special-gallery/#special">Special Gallery</a>
-            <a href="special-gallery/#partnership">Partnership</a>
-            <a href="#coming-next">Coming Next</a>
+            <a href="partnership/index.html">Partnership</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -32,14 +39,10 @@
         <section class="hero" id="home">
             <div class="hero-content" data-animate>
                 <p class="label">MASU PHOTO</p>
-                <h1>A wooden vessel traveling the world.</h1>
-                <p class="lead">
-                    A MASU in hand.<br>
-                    A moment you can feel.
-                </p>
+                <h1 data-i18n="hero_title">A wooden vessel traveling the world.</h1>
+                <p class="lead" data-i18n="hero_lead">A MASU in hand.<br>A moment you can feel.</p>
                 <div class="hero-cta">
-                    <a class="btn" href="#photo-books">VIEW PHOTO BOOKS</a>
-                    <a class="btn ghost" href="#special-gallery">SPECIAL GALLERY</a>
+                    <a class="btn" href="#photo-books" data-i18n="hero_btn">VIEW PHOTO BOOKS</a>
                 </div>
             </div>
             <div class="hero-visual" data-animate>
@@ -49,26 +52,15 @@
 
         <section class="about" id="about">
             <div class="wide-copy" data-animate>
-                <h2>What is MASU PHOTO</h2>
-                <p>
-                    A MASU —<br>
-                    a wooden vessel shaped by centuries.<br><br>
-                    In a single touch,<br>
-                    light, air, and human presence come alive.<br><br>
-                    An old form,<br>
-                    reborn as contemporary art.
-                </p>
+                <h2 data-i18n="about_title">What is MASU PHOTO</h2>
+                <p data-i18n="about_body">A MASU —<br>a wooden vessel shaped by centuries.<br><br>In a single touch,<br>light, air, and human presence come alive.<br><br>An old form,<br>reborn as contemporary art.</p>
             </div>
         </section>
 
         <section class="section-bookshelf" id="photo-books">
             <div class="bookshelf-header" data-animate>
-                <h2>PHOTO BOOK SERIES</h2>
-                <p>
-                    A collection of journeys,<br>
-                    captured across different lands.<br>
-                    All volumes are open to read.
-                </p>
+                <h2 data-i18n="books_title">PHOTO BOOK SERIES</h2>
+                <p data-i18n="books_desc">A collection of journeys,<br>captured across different lands.<br>All volumes are open to read.</p>
             </div>
             <div class="bookshelf-scroll" data-animate>
                 <a class="book-card" href="https://masuphoto-japan.fomusglobal.com">
@@ -81,9 +73,6 @@
                     </div>
                 </a>
 
-
-
-
                 <a class="book-card" href="https://masuphoto-taiwan.fomusglobal.com">
                     <div class="book-cover">
                         <img src="Masu Photo Books 表紙/TAIWAN.png" alt="MASU PHOTO Taiwan cover" loading="lazy">
@@ -93,9 +82,6 @@
                         <span class="book-year">2023</span>
                     </div>
                 </a>
-
-
-
 
                 <a class="book-card" href="https://masuphoto-malaysia.fomusglobal.com">
                     <div class="book-cover">
@@ -107,9 +93,6 @@
                     </div>
                 </a>
 
-
-
-
                 <a class="book-card" href="https://masuphoto-philippine.fomusglobal.com">
                     <div class="book-cover">
                         <img src="Masu Photo Books 表紙/Philippine.png" alt="MASU PHOTO Philippines cover" loading="lazy">
@@ -119,9 +102,6 @@
                         <span class="book-year">2024</span>
                     </div>
                 </a>
-
-
-
 
                 <a class="book-card" href="https://masuphoto-usa.fomusglobal.com">
                     <div class="book-cover">
@@ -133,9 +113,6 @@
                     </div>
                 </a>
 
-
-
-
                 <a class="book-card" href="https://masuphoto-spain.fomusglobal.com">
                     <div class="book-cover">
                         <img src="Masu Photo Books 表紙/SPAIN.png" alt="MASU PHOTO Spain cover" loading="lazy">
@@ -145,9 +122,6 @@
                         <span class="book-year">2024</span>
                     </div>
                 </a>
-
-
-
 
                 <a class="book-card" href="https://masuphoto-estonia.fomusglobal.com">
                     <div class="book-cover book-cover-flat">
@@ -159,9 +133,6 @@
                     </div>
                 </a>
 
-
-
-
                 <a class="book-card" href="https://masuphoto-lithuania.fomusglobal.com">
                     <div class="book-cover book-cover-flat">
                         <img src="Masu Photo Books 表紙/Lithuania.png" alt="MASU PHOTO Lithuania cover" loading="lazy">
@@ -171,9 +142,6 @@
                         <span class="book-year">2025</span>
                     </div>
                 </a>
-
-
-
 
                 <a class="book-card" href="https://masuphoto-latvia.fomusglobal.com">
                     <div class="book-cover book-cover-flat">
@@ -185,9 +153,6 @@
                     </div>
                 </a>
 
-
-
-
                 <a class="book-card" href="https://masuphoto-ireland.fomusglobal.com">
                     <div class="book-cover book-cover-flat">
                         <img src="Masu Photo Books 表紙/Ireland.png" alt="MASU PHOTO Ireland cover" loading="lazy">
@@ -198,9 +163,6 @@
                     </div>
                 </a>
 
-
-
-
                 <a class="book-card" href="https://masuphoto-qatar.fomusglobal.com">
                     <div class="book-cover book-cover-flat">
                         <img src="Masu Photo Books 表紙/Qatar.png" alt="MASU PHOTO Qatar cover" loading="lazy">
@@ -210,7 +172,6 @@
                         <span class="book-year">2025</span>
                     </div>
                 </a>
-
 
                 <a class="book-card" href="https://masuphoto-z.fomusglobal.com">
                     <div class="book-cover book-cover-flat">
@@ -224,50 +185,36 @@
             </div>
         </section>
 
-        <section class="special-gallery section" id="special-gallery">
-            <div class="special-inner" data-animate>
-                <p class="label">SPECIAL GALLERY</p>
-                <h2>Still unseen.<br>Another journey.</h2>
-                <div class="gallery-actions">
-                    <button class="gallery-btn" type="button" data-pass-toggle>ENTER PASS</button>
-                    <button class="gallery-btn" type="button" data-pass-submit>ENTER WITH PASS</button>
-                    <a class="gallery-btn" href="https://buy.stripe.com/test_00" target="_blank" rel="noreferrer">GET ACCESS (10€)</a>
-                </div>
-                <div class="pass-panel" aria-hidden="true">
-                    <label for="gallery-pass" class="sr-only">Pass code</label>
-                    <input id="gallery-pass" type="password" placeholder="PASS CODE" autocomplete="off">
-                    <p class="pass-feedback" aria-live="polite"></p>
+        <section class="section-future" id="coming-next">
+            <div class="future-bg"></div>
+            <div class="future-content" data-animate>
+                <!-- Partnership -->
+                <div class="future-partnership">
+                    <p class="future-eyebrow">PARTNERSHIP</p>
+                    <h2 class="future-headline" data-i18n="partner_headline">Your story,<br>told through the MASU.</h2>
+                    <div class="future-cols">
+                        <p class="future-text" data-i18n="partner_text1">MASU PHOTO documents quiet moments across the world — people, places and light through the presence of a wooden vessel.</p>
+                        <p class="future-text" data-i18n="partner_text2">As the archive grows, so does the possibility of new expressions with cities, brands, and cultural projects that resonate with its vision.</p>
+                    </div>
+                    <a class="future-cta" href="partnership/index.html">
+                        <span class="future-cta-text" data-i18n="partner_cta">EXPLORE PARTNERSHIP</span>
+                        <span class="future-cta-arrow">&rarr;</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="section-future" id="coming-next">
-            <div class="future-inner" data-animate>
-                <div class="future-card">
-                    <p class="future-label">COMING NEXT</p>
-                    <p class="future-year">2026</p>
-                    <p class="future-caption">
-                        The journey continues,<br>
-                        wherever the MASU is held next.
-                    </p>
-                </div>
-                <div class="future-partner">
-                    <p class="future-label subtle">PARTNERSHIP</p>
-                    <p class="future-copy">
-                        MASU PHOTO continues to document quiet moments around the world,<br>
-                        capturing people, places and light through the presence of a wooden MASU.
-                    </p>
-                    <p class="future-copy">
-                        As this archive grows, so does the possibility of creating<br>
-                        new expressions with cities, brands, cultural projects and places<br>
-                        that resonate with its vision.
-                    </p>
-                    <p class="future-sub">
-                        If this journey speaks to you,<br>
-                        we would be pleased to explore a partnership<br>
-                        that supports and expands the world of MASU PHOTO.
-                    </p>
-                    <a class="btn-partner" href="#contact">CONTACT</a>
+        <section class="section-sponsors" id="sponsors">
+            <div class="sponsors-inner" data-animate>
+                <p class="sponsors-label" data-i18n="sponsors_label">SUPPORTED BY</p>
+                <div class="sponsors-grid">
+                    <div class="sponsor-card"><img src="partnership/1.png" alt="Sponsor"></div>
+                    <div class="sponsor-card"><img src="partnership/2.png" alt="Sponsor"></div>
+                    <div class="sponsor-card"><img src="partnership/3.png" alt="Sponsor"></div>
+                    <div class="sponsor-card"><img src="partnership/4.png" alt="Sponsor"></div>
+                    <div class="sponsor-card"><img src="partnership/5.png" alt="Sponsor"></div>
+                    <div class="sponsor-card"><img src="partnership/6.png" alt="Sponsor"></div>
+                    <div class="sponsor-card"><img src="partnership/7.png" alt="Sponsor"></div>
                 </div>
             </div>
         </section>

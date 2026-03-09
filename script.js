@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initMenu();
     initBookGallery();
     initBookViewer();
+    initLang();
 });
 
 function initScrollReveal() {
@@ -272,5 +273,58 @@ function initMenu() {
             toggle.classList.remove("active");
             nav.classList.remove("open");
         });
+    });
+}
+
+function initLang() {
+    const translations = {
+        en: {
+            hero_title: "A wooden vessel traveling the world.",
+            hero_lead: "A MASU in hand.<br>A moment you can feel.",
+            hero_btn: "VIEW PHOTO BOOKS",
+            about_title: "What is MASU PHOTO",
+            about_body: "A MASU —<br>a wooden vessel shaped by centuries.<br><br>In a single touch,<br>light, air, and human presence come alive.<br><br>An old form,<br>reborn as contemporary art.",
+            books_title: "PHOTO BOOK SERIES",
+            books_desc: "A collection of journeys,<br>captured across different lands.<br>All volumes are open to read.",
+            partner_headline: "Your story,<br>told through the MASU.",
+            partner_text1: "MASU PHOTO documents quiet moments across the world — people, places and light through the presence of a wooden vessel.",
+            partner_text2: "As the archive grows, so does the possibility of new expressions with cities, brands, and cultural projects that resonate with its vision.",
+            partner_cta: "EXPLORE PARTNERSHIP",
+            sponsors_label: "SUPPORTED BY"
+        },
+        ja: {
+            hero_title: "枡が、世界を旅している。",
+            hero_lead: "手のひらに、枡がひとつ。<br>それだけで、心が動く瞬間がある。",
+            hero_btn: "写真集を見る",
+            about_title: "MASU PHOTO とは",
+            about_body: "枡 ——<br>何百年もの時を経て受け継がれてきた、日本の器。<br><br>ひとつ手に取るだけで、<br>光や空気、人の気配が静かに立ち上がる。<br><br>古い形が、<br>現代アートとして生まれ変わる。",
+            books_title: "写真集シリーズ",
+            books_desc: "さまざまな土地を巡りながら<br>記録してきた旅の断片。<br>すべての写真集を、自由にご覧いただけます。",
+            partner_headline: "あなたの物語を、<br>枡を通して届ける。",
+            partner_text1: "MASU PHOTO は、枡とともに世界各地の静かな瞬間を記録しています。人、場所、光——そこに枡があることで生まれる風景。",
+            partner_text2: "アーカイブが広がるほど、都市やブランド、文化プロジェクトとの新しい表現の可能性も広がっていきます。",
+            partner_cta: "パートナーシップについて",
+            sponsors_label: "サポーター"
+        }
+    };
+
+    let currentLang = "en";
+    const toggleBtn = document.querySelector("[data-lang-toggle]");
+    if (!toggleBtn) return;
+
+    const applyLang = (lang) => {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (translations[lang] && translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
+            }
+        });
+        toggleBtn.textContent = lang === "en" ? "EN / JA" : "JA / EN";
+    };
+
+    toggleBtn.addEventListener("click", () => {
+        applyLang(currentLang === "en" ? "ja" : "en");
     });
 }
