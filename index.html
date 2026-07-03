@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
     <title>MASU PHOTO – A Wooden Vessel Traveling the World | 枡フォト写真集</title>
-    <meta name="description" content="MASU PHOTO is a contemporary art photography project documenting the journey of a traditional Japanese wooden vessel (MASU) across 12 countries. Explore all photo books for free.">
-    <meta name="keywords" content="MASU PHOTO, masu photo, 枡フォト, 枡 写真, wooden vessel, contemporary art photography, Japan photo book, travel photography, FOMUS, MaSU KEI">
+    <meta name="description" content="MASU PHOTO (枡フォト写真集) is a contemporary art photography project by MaSU (KEI), founder of FOMUS, documenting a traditional Japanese wooden vessel — the MASU — across 12 countries. All Masu Photo Books are free to read online.">
+    <meta name="keywords" content="MASU PHOTO, masu photo, Masu Photo Books, 枡フォト, 枡フォト写真集, 枡 写真, wooden vessel, contemporary art photography, Japan photo book, travel photography, FOMUS, MaSU KEI, まっすー">
+    <meta name="author" content="MaSU (KEI) – FOMUS">
     <link rel="canonical" href="https://masuphoto.fomusglobal.com/">
     <link rel="alternate" hreflang="en" href="https://masuphoto.fomusglobal.com/">
     <link rel="alternate" hreflang="ja" href="https://masuphoto.fomusglobal.com/">
@@ -38,25 +39,60 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://masuphoto.fomusglobal.com/#website",
         "name": "MASU PHOTO",
-        "alternateName": ["枡フォト", "MASU PHOTO ONLINE ARCHIVE"],
+        "alternateName": ["枡フォト", "枡フォト写真集", "MASU PHOTO ONLINE ARCHIVE", "Masu Photo Books"],
         "url": "https://masuphoto.fomusglobal.com/",
         "description": "A contemporary art photography project documenting the journey of a traditional Japanese wooden vessel (MASU) across 12 countries.",
         "inLanguage": ["en", "ja"],
-        "publisher": {
-            "@type": "Organization",
-            "name": "FOMUS",
-            "url": "https://www.fomusglobal.com",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://masuphoto.fomusglobal.com/icons/icon-512.png"
-            }
+        "keywords": "MASU PHOTO, 枡フォト, 枡フォト写真集, wooden vessel photography, contemporary art photography, Japan, FOMUS, MaSU KEI",
+        "sameAs": [
+            "https://masuphoto.theshop.jp/",
+            "https://www.instagram.com/masumasumasuo7/",
+            "https://www.facebook.com/FOMUS.OFFICIAL/",
+            "https://www.fomusglobal.com/"
+        ],
+        "publisher": {"@id": "https://www.fomusglobal.com/#organization"},
+        "author": {"@id": "https://masuphoto.fomusglobal.com/#person-masu"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.fomusglobal.com/#organization",
+        "name": "FOMUS",
+        "alternateName": "FOMUS GLOBAL",
+        "url": "https://www.fomusglobal.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://masuphoto.fomusglobal.com/icons/icon-512.png"
         },
-        "author": {
-            "@type": "Person",
-            "name": "MaSU (KEI)",
-            "sameAs": ["https://www.instagram.com/masumasumasuo7/"]
-        }
+        "description": "FOMUS is a Japanese cultural maison carrying 1300 years of craftsmanship to the world through the MASU, a traditional wooden vessel.",
+        "founder": {"@id": "https://masuphoto.fomusglobal.com/#person-masu"},
+        "sameAs": [
+            "https://www.fomus.jp/",
+            "https://www.facebook.com/FOMUS.OFFICIAL/",
+            "https://www.instagram.com/masumasumasuo7/",
+            "https://masuphoto.theshop.jp/"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://masuphoto.fomusglobal.com/#person-masu",
+        "name": "MaSU (KEI)",
+        "alternateName": ["MaSU", "まっすー", "増尾圭亮"],
+        "jobTitle": "Photographer & Founder of FOMUS",
+        "description": "Japanese photographer and founder of FOMUS, creator of the MASU PHOTO project documenting a traditional wooden MASU vessel across the world.",
+        "worksFor": {"@id": "https://www.fomusglobal.com/#organization"},
+        "knowsAbout": ["Contemporary Art Photography", "MASU", "Japanese Traditional Crafts", "Travel Photography"],
+        "sameAs": [
+            "https://www.instagram.com/masumasumasuo7/",
+            "https://www.fomusglobal.com/"
+        ]
     }
     </script>
     <script type="application/ld+json">
