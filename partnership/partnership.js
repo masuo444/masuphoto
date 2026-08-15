@@ -1,7 +1,7 @@
 const partnershipTranslations = {
     en: {
         p_title: "Join the journey.",
-        p_subtitle: "A wooden vessel has traveled 12 countries.<br>The next chapter is written together.",
+        p_subtitle: "A wooden vessel has traveled 20 countries.<br>The next chapter is written together.",
         p_hero_cta: "BECOME A PARTNER",
         p_stat1: "Countries",
         p_stat2: "Photo Books",
@@ -33,7 +33,7 @@ const partnershipTranslations = {
     },
     ja: {
         p_title: "\u65c5\u306b\u52a0\u308f\u308b\u3002",
-        p_subtitle: "\u6728\u306e\u5668\u306f12\u304b\u56fd\u3092\u65c5\u3057\u307e\u3057\u305f\u3002<br>\u6b21\u306e\u7ae0\u306f\u3001\u4e00\u7dd2\u306b\u66f8\u304d\u307e\u3057\u3087\u3046\u3002",
+        p_subtitle: "\u6728\u306e\u5668\u306f20\u304b\u56fd\u3092\u65c5\u3057\u307e\u3057\u305f\u3002<br>\u6b21\u306e\u7ae0\u306f\u3001\u4e00\u7dd2\u306b\u66f8\u304d\u307e\u3057\u3087\u3046\u3002",
         p_hero_cta: "\u30d1\u30fc\u30c8\u30ca\u30fc\u306b\u306a\u308b",
         p_stat1: "\u304b\u56fd",
         p_stat2: "\u5199\u771f\u96c6",
