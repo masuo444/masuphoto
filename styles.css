@@ -344,6 +344,8 @@ section {
     padding: 1.5rem 24px 0;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    /* スナップ基準を内側に揃える。無いと1枚目が画面端に貼り付き見出しとズレる */
+    scroll-padding-left: 24px;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -1113,6 +1115,7 @@ section {
     .bookshelf-scroll {
         padding: 1rem 12px 0;
         gap: 18px;
+        scroll-padding-left: 12px;
     }
 
     .book-card {
@@ -1188,4 +1191,11 @@ section {
 .bookshelf-header h2,
 .special-inner h2 {
     font-family: "Shippori Mincho", "Noto Sans JP", serif;
+}
+
+/* JSが動かない環境でも本文が見えるようにする（fail-open）。
+   JSが動けば即座に no-js が外れ、通常どおりフェードインする。 */
+.no-js [data-animate] {
+    opacity: 1;
+    transform: none;
 }
