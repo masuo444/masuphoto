@@ -83,6 +83,12 @@ img {
     border-color: var(--gold);
 }
 
+/* 言語切替をリンクにした場合もボタンと同じ見た目にする */
+a.lang-toggle {
+    display: inline-block;
+    text-decoration: none;
+}
+
 .site-header nav {
     display: flex;
     gap: 18px;
@@ -191,6 +197,8 @@ section {
 
 .hero-visual img {
     width: min(420px, 90%);
+    /* width/height属性でCLSを防ぎつつ、高さは元の比率どおり可変にする */
+    height: auto;
     border-radius: 28px;
     box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
     object-fit: cover;
