@@ -5,7 +5,7 @@
 """
 import json
 
-SITE = "https://masuphoto.fomusglobal.com"
+SITE = "https://masuphoto.fomus.jp"
 ORG_ID = "https://www.fomus.jp/#organization"
 PERSON_ID = f"{SITE}/#person-masu"
 FORM_KEY = "c72fa767-1677-4c8c-b48c-407ec1f79896"  # Web3Forms（fomus.jp と共通。届け先 contact@fomus.jp）

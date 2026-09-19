@@ -1,4 +1,4 @@
-# MASU PHOTO（masuphoto.fomusglobal.com）
+# MASU PHOTO（masuphoto.fomus.jp）
 
 GitHub Pages（masuo444/masuphoto）。静的HTML。全写真集をこのリポジトリ1つで配信する。
 

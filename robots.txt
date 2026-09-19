@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://masuphoto.fomusglobal.com/sitemap.xml
+Sitemap: https://masuphoto.fomus.jp/sitemap.xml

@@ -31,7 +31,7 @@ import sys
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-SITE = "https://masuphoto.fomusglobal.com"
+SITE = "https://masuphoto.fomus.jp"
 SRC_EXT = (".jpg", ".jpeg", ".png", ".webp")
 SM_WIDTH, TH_WIDTH = 800, 200
 TODAY = datetime.date.today().isoformat()
@@ -197,7 +197,7 @@ def og_book(book, pages):
     d.text((x, 322), f"Photo Book {book['number']}  ·  {book['year']}  ·  {len(pages)} pages",
            font=_font(FONT_EN, 30), fill=MUTED)
     d.text((x, 380), f"枡フォト写真集｜{book['name_ja']}", font=_font(FONT_JA, 34), fill=TEXT)
-    d.text((x, 530), "masuphoto.fomusglobal.com", font=_font(FONT_EN, 24), fill=GOLD)
+    d.text((x, 530), "masuphoto.fomus.jp", font=_font(FONT_EN, 24), fill=GOLD)
     im.save(out, "JPEG", quality=86, optimize=True, progressive=True)
     print("  created og/" + book["slug"] + ".jpg")
 
@@ -802,7 +802,7 @@ def indexnow():
     """sitemap.xml の全URLを IndexNow（Bing・Yandex 等が共有）に通知する。push して公開された後に実行する"""
     import urllib.request
     urls = re.findall(r"<loc>([^<]+)</loc>", open(path("sitemap.xml"), encoding="utf-8").read())
-    body = json.dumps({"host": "masuphoto.fomusglobal.com", "key": INDEXNOW_KEY,
+    body = json.dumps({"host": "masuphoto.fomus.jp", "key": INDEXNOW_KEY,
                        "keyLocation": f"{SITE}/{INDEXNOW_KEY}.txt", "urlList": urls}).encode()
     req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
                                  headers={"Content-Type": "application/json; charset=utf-8"})
