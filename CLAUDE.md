@@ -1,6 +1,8 @@
 # MASU PHOTO（masuphoto.fomus.jp）
 
-GitHub Pages（masuo444/masuphoto）。静的HTML。全写真集をこのリポジトリ1つで配信する。
+静的HTML。全写真集をこのリポジトリ（masuo444/masuphoto）1つで配信する。**配信は Vercel（プロジェクト masuphoto。GitHub連携で main へ push すると自動公開）**。DNS は Xserver（サーバーパネル → DNSレコード設定 → fomus.jp）で `masuphoto` CNAME `cname.vercel-dns.com`。GitHub Pages の設定と CNAME ファイルは予備として残っているだけ。
+
+旧ドメイン masuphoto.fomusglobal.com は Vercel の別プロジェクト masuphoto-redirect（`~/Desktop/projects/masuphoto-redirect`）で同じパスへ 308 転送している。消さないこと。
 
 ## 写真集の仕組み
 - 冊の一覧は `books.json`（番号・国名・年・版名）。ページ画像は `photobooks/<slug>/001.jpg …`（元画像そのまま。再圧縮しない）
