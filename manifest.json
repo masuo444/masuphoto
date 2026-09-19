@@ -1,7 +1,7 @@
 {
     "name": "MASU PHOTO ONLINE ARCHIVE",
     "short_name": "MASU PHOTO",
-    "description": "A wooden vessel traveling the world — photo book archive by MaSU.",
+    "description": "One masu. One shot. The whole world. — photo book archive by MaSU.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#0d0d0d",

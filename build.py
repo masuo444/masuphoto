@@ -214,9 +214,9 @@ def og_site(books):
     for c in covers:
         x += _paste_cover(im, c, x, 160, 270) + 22
     d.text((60, 42), "MASU  PHOTO", font=_font(FONT_EN, 30), fill=GOLD)
-    d.text((60, 86), "A wooden vessel traveling the world", font=_font(FONT_EN, 34), fill=TEXT)
+    d.text((60, 86), "One masu. One shot. The whole world.", font=_font(FONT_EN, 34), fill=TEXT)
     d.text((60, 490), f"{len(books)} photo books  ·  free to read", font=_font(FONT_EN, 30), fill=MUTED)
-    d.text((60, 540), "枡フォト写真集 — 枡と旅する写真集", font=_font(FONT_JA, 30), fill=TEXT)
+    d.text((60, 540), "枡フォト写真集 — 世界を、枡で撮る。", font=_font(FONT_JA, 30), fill=TEXT)
     im.save(out, "JPEG", quality=86, optimize=True, progressive=True)
     print("  created og/site.jpg")
 

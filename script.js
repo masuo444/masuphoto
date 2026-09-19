@@ -283,8 +283,8 @@ function initMenu() {
 function initLang() {
     const translations = {
         en: {
-            hero_title: "A wooden vessel traveling the world.",
-            hero_lead: "A MASU in hand.<br>A moment you can feel.",
+            hero_title: "One masu.<br>One shot.<br>The whole world.",
+            hero_lead: "A Japanese wooden cup,<br>carried across the world.",
             hero_btn: "VIEW PHOTO BOOKS",
             about_title: "What is MASU PHOTO",
             about_body: "A MASU —<br>a wooden vessel shaped by centuries.<br><br>In a single touch,<br>light, air, and human presence come alive.<br><br>An old form,<br>reborn as contemporary art.",
