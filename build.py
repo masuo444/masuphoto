@@ -258,10 +258,11 @@ def book_page_en(book, pages, books, countries):
         "isAccessibleForFree": true,
         "author": {{
             "@type": "Person",
+            "@id": "{SITE}/#person-masu",
             "name": "MaSU (KEI)",
             "sameAs": ["https://www.instagram.com/masumasumasuo7/"]
         }},
-        "publisher": {{ "@type": "Organization", "name": "FOMUS", "url": "https://www.fomusglobal.com" }},
+        "publisher": {{ "@type": "Organization", "@id": "https://www.fomus.jp/#organization", "name": "FOMUS", "url": "https://www.fomus.jp/" }},
         "isPartOf": {{
             "@type": "BookSeries",
             "name": "MASU PHOTO Book Series",
@@ -286,6 +287,7 @@ def book_page_en(book, pages, books, countries):
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css?v={ver("styles.css")}">
     <link rel="stylesheet" href="../../book.css?v={ver("book.css")}">
+    <link rel="stylesheet" href="../../info.css?v={ver("info.css")}">
 </head>
 <body>
     <div class="noise"></div>
@@ -298,7 +300,9 @@ def book_page_en(book, pages, books, countries):
         <nav id="site-menu">
             <a href="../../">Home</a>
             <a href="../../#photo-books">Photo Books</a>
-            <a href="../../partnership/index.html">Partnership</a>
+            <a href="../../about/">About</a>
+            <a href="../../masu/">Why Masu</a>
+            <a href="../../commission/">Commission</a>
         </nav>
     </header>
 
@@ -334,6 +338,13 @@ def book_page_en(book, pages, books, countries):
         </section>
 
 {reader_html(book, pages, "../../", "en")}
+
+        <section class="book-cta" data-animate>
+            <p class="label">COMMISSION</p>
+            <h2>Make the next volume, of your place</h2>
+            <p>MASU PHOTO makes one photo book per country or region — the people of your place, photographed with the masu and published as the next volume. For city and destination promotion.</p>
+            <a class="btn" href="../../commission/">Start a photo book project</a>
+        </section>
 
         <section class="section-bookshelf" id="other-books">
             <div class="bookshelf-header" data-animate>
@@ -403,11 +414,12 @@ def book_page_ja(book, pages, books, countries):
         "isAccessibleForFree": true,
         "author": {{
             "@type": "Person",
+            "@id": "{SITE}/#person-masu",
             "name": "MaSU（KEI）",
             "alternateName": ["まっすー", "増尾圭亮"],
             "sameAs": ["https://www.instagram.com/masumasumasuo7/"]
         }},
-        "publisher": {{ "@type": "Organization", "name": "FOMUS", "url": "https://www.fomusglobal.com" }},
+        "publisher": {{ "@type": "Organization", "@id": "https://www.fomus.jp/#organization", "name": "FOMUS", "url": "https://www.fomus.jp/" }},
         "isPartOf": {{
             "@type": "BookSeries",
             "name": "枡フォト写真集シリーズ",
@@ -435,6 +447,7 @@ def book_page_ja(book, pages, books, countries):
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../styles.css?v={ver("styles.css")}">
     <link rel="stylesheet" href="../../../book.css?v={ver("book.css")}">
+    <link rel="stylesheet" href="../../../info.css?v={ver("info.css")}">
 </head>
 <body>
     <div class="noise"></div>
@@ -447,7 +460,9 @@ def book_page_ja(book, pages, books, countries):
         <nav id="site-menu">
             <a href="../../">ホーム</a>
             <a href="../../#photo-books">写真集</a>
-            <a href="../../../partnership/index.html">パートナーシップ</a>
+            <a href="../../about/">作者について</a>
+            <a href="../../masu/">枡について</a>
+            <a href="../../commission/">写真集プロジェクト</a>
         </nav>
     </header>
 
@@ -483,6 +498,13 @@ def book_page_ja(book, pages, books, countries):
         </section>
 
 {reader_html(book, pages, "../../../", "ja")}
+
+        <section class="book-cta" data-animate>
+            <p class="label">写真集プロジェクト</p>
+            <h2>次の1冊を、あなたの国・地域で</h2>
+            <p>枡フォトは、国や地域ごとに1冊の写真集をつくるプロジェクトです。その土地の人々を枡と一緒に撮影し、シリーズの新しい1冊として公開します。シティプロモーションや観光PRにご活用ください。</p>
+            <a class="btn" href="../../commission/">写真集プロジェクトを相談する</a>
+        </section>
 
         <section class="section-bookshelf" id="other-books">
             <div class="bookshelf-header" data-animate>
@@ -591,6 +613,9 @@ def faq_count_en(text, books):
 def sitemap(books):
     urls = [(f"{SITE}/", "1.0", "weekly"), (f"{SITE}/ja/", "1.0", "weekly"),
             (f"{SITE}/partnership/", "0.6", "monthly")]
+    for slug in ("commission", "about", "masu"):
+        urls.append((f"{SITE}/{slug}/", "0.9" if slug == "commission" else "0.7", "monthly"))
+        urls.append((f"{SITE}/ja/{slug}/", "0.9" if slug == "commission" else "0.7", "monthly"))
     for b in books:
         urls.append((f"{SITE}/books/{b['slug']}/", "0.8", "monthly"))
         urls.append((f"{SITE}/ja/books/{b['slug']}/", "0.8", "monthly"))
@@ -601,6 +626,27 @@ def sitemap(books):
     <priority>{pr}</priority>
   </url>''' for u, pr, f in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
+
+
+def llms_txt(books, countries):
+    """AI 向けの案内（llmstxt.org の形式）。サイトの要点と主要ページへの入口だけを書く"""
+    lines = [f"# MASU PHOTO（枡フォト）", "",
+             f"> MASU PHOTO is a photography project by MaSU (KEI, Keisuke Masuo), founder of FOMUS LLC (合同会社FOMUS). "
+             f"Carrying a masu — a traditional Japanese wooden vessel and good-luck charm whose name echoes 'to increase' — "
+             f"MaSU photographs people around the world. {len(books)} photo books from {countries} countries, all free to read on this site. "
+             f"MASU PHOTO takes photo book projects: one book per country or region, for city and destination promotion, commissioned by countries, tourism boards, embassies, municipalities, DMOs and regional companies (quoted individually; no individual portrait sessions). Optional promotion after publication: social media, social media advertising, video production, exhibitions and events, with a results report.", "",
+             "## Photo book projects / 写真集プロジェクトのご依頼",
+             f"- [Commission (EN)]({SITE}/commission/): one MASU PHOTO book per country or region, for city and destination promotion",
+             f"- [写真集プロジェクトのご依頼 (JA)]({SITE}/ja/commission/): 国・地域ごとに1冊の写真集をつくるプロジェクト（シティプロモーション・観光PR）", "",
+             "## About",
+             f"- [About MaSU (KEI) and FOMUS]({SITE}/about/)", f"- [作者について]({SITE}/ja/about/)",
+             f"- [Why the masu]({SITE}/masu/)", f"- [枡について]({SITE}/ja/masu/)", "",
+             "## Photo books / 写真集"]
+    for b in books:
+        lines.append(f"- [Book {b['number']}: {b['name_en']} ({b['year']})]({SITE}/books/{b['slug']}/) / "
+                     f"[第{b['number']}巻 {b['name_ja']}]({SITE}/ja/books/{b['slug']}/)")
+    lines += ["", "## Company", "- [FOMUS (fomus.jp)](https://www.fomus.jp/)", "- [MASU-STORE — buy a masu](https://masu.fomus.jp/)", ""]
+    return "\n".join(lines)
 
 
 # ---------------------------------------------------------------- main
@@ -636,6 +682,13 @@ def build():
     one = "\n".join(f'                <img src="../covers-thumb/{b["slug"]}.webp" width="440" height="605" loading="lazy" alt="{esc(b["name_en"])}" >' for b in books)
     t = replace_block(t, "marquee", one + "\n                <!-- duplicate for seamless loop -->\n" + one + "\n            ", p)
     write_if_changed(p, update_counts(t, total, countries))
+
+    import site_pages
+    for lang, base in (("en", ""), ("ja", "ja")):
+        write_if_changed(path(base, "commission", "index.html"), site_pages.commission_page(lang, books, countries, total, ver))
+        write_if_changed(path(base, "about", "index.html"), site_pages.about_page(lang, books, countries, ver))
+        write_if_changed(path(base, "masu", "index.html"), site_pages.masu_page(lang, countries, total, ver))
+    write_if_changed(path("llms.txt"), llms_txt(books, countries))
 
     write_if_changed(path("sitemap.xml"), sitemap(books))
     print(f"done: {total} books, {countries} countries")

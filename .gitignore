@@ -1,2 +1,5 @@
 # macOS Finder metadata
 **/.DS_Store
+
+# build.py の実行で生成される
+__pycache__/
