@@ -11,8 +11,14 @@ GitHub Pages（masuo444/masuphoto）。静的HTML。全写真集をこのリポ�
 ## 1冊追加する
 1. `books.json` に追記（slug・number・name_en・name_ja・year・year_shelf・date_published）
 2. `python3 build.py import <slug> <画像フォルダ>`（ファイル名順に取り込む。PNG は原寸のまま JPEG q92 に）
-3. `python3 build.py`
+3. `python3 build.py`（push して公開されたら `python3 build.py indexnow` で Bing 等へ通知）
 4. 表紙は `covers-thumb/<slug>.webp`・`covers-lg/<slug>.webp` が無ければ1ページ目から自動生成。差し替えるときは両方消してビルドし直す
 
 ## 旧サブドメイン
 `masuphoto-<国>.fomusglobal.com`（12個、各リポジトリ）は `/books/<slug>/` への転送ページだけ。印刷物の QR が指しているので消さない。
+
+## 検索・AI まわり
+- 写真集ごとの紹介文は `books.json` の `story_en` / `story_ja`。写真から確かに言えることと、MaSU が確認した地名だけを書く
+- シェア画像は `og/<slug>.jpg`・`og/site.jpg`（1200x630 JPEG、build.py が生成）。WebP は LINE 等で出ないので og:image に使わない
+- Bing Webmaster Tools 登録済み（確認は index.html の msvalidate.01 メタタグ。消さない）。IndexNow の鍵はルートの `<key>.txt` と build.py の INDEXNOW_KEY
+- `sitemap.xml` は画像サイトマップ込み。`llms.txt` は AI 向けの要約
