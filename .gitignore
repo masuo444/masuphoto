@@ -3,3 +3,4 @@
 
 # build.py の実行で生成される
 __pycache__/
+.vercel
