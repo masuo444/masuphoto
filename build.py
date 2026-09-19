@@ -146,6 +146,81 @@ def prepare_covers(book, pages):
         print("  created", rel + "/" + slug + ".webp")
 
 
+# ---------------------------------------------------------------- シェア用カード（og:image）
+# WebP の og:image は LINE などで表示されないことがあるため、1200x630 の JPEG を作る
+
+OG_W, OG_H = 1200, 630
+FONT_EN = "/System/Library/Fonts/Supplemental/Didot.ttc"
+FONT_JA = "/System/Library/Fonts/ヒラギノ明朝 ProN.ttc"
+GOLD, TEXT, MUTED = (215, 188, 117), (245, 241, 230), (170, 164, 150)
+
+
+def _og_canvas():
+    from PIL import ImageDraw
+    im = Image.new("RGB", (OG_W, OG_H), (13, 13, 13))
+    d = ImageDraw.Draw(im)
+    for y in range(OG_H):  # 上から下へ、ごく薄い木の色のグラデーション
+        t = y / OG_H
+        d.line([(0, y), (OG_W, y)], fill=(int(26 - 13 * t), int(20 - 7 * t), int(14 - 1 * t)))
+    return im, d
+
+
+def _font(p, size):
+    from PIL import ImageFont
+    return ImageFont.truetype(p, size)
+
+
+def _paste_cover(im, cover, x, y, h):
+    from PIL import ImageFilter
+    c = Image.open(cover).convert("RGB")
+    w = round(c.width * h / c.height)
+    c = c.resize((w, h), Image.LANCZOS)
+    shadow = Image.new("RGBA", (w + 60, h + 60), (0, 0, 0, 0))
+    shadow.paste((0, 0, 0, 170), (30, 38, 30 + w, 38 + h))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(14))
+    im.paste(shadow, (x - 30, y - 30), shadow)
+    im.paste(c, (x, y))
+    return w
+
+
+def og_book(book, pages):
+    out = path("og", book["slug"] + ".jpg")
+    cover = path("covers-lg", book["slug"] + ".webp")
+    if os.path.exists(out) and os.path.getmtime(out) >= max(os.path.getmtime(cover), os.path.getmtime(path("books.json"))):
+        return
+    os.makedirs(path("og"), exist_ok=True)
+    im, d = _og_canvas()
+    w = _paste_cover(im, cover, 96, 45, 540)
+    x = 96 + w + 72
+    d.text((x, 150), "MASU  PHOTO", font=_font(FONT_EN, 26), fill=GOLD)
+    d.text((x, 196), book["name_en"], font=_font(FONT_EN, 96), fill=TEXT)
+    d.text((x, 322), f"Photo Book {book['number']}  ·  {book['year']}  ·  {len(pages)} pages",
+           font=_font(FONT_EN, 30), fill=MUTED)
+    d.text((x, 380), f"枡フォト写真集｜{book['name_ja']}", font=_font(FONT_JA, 34), fill=TEXT)
+    d.text((x, 530), "masuphoto.fomusglobal.com", font=_font(FONT_EN, 24), fill=GOLD)
+    im.save(out, "JPEG", quality=86, optimize=True, progressive=True)
+    print("  created og/" + book["slug"] + ".jpg")
+
+
+def og_site(books):
+    """トップ・依頼・作者・枡のページ共通。最新の表紙を並べる"""
+    out = path("og", "site.jpg")
+    covers = [path("covers-lg", b["slug"] + ".webp") for b in books[-5:]]
+    if os.path.exists(out) and os.path.getmtime(out) >= max(os.path.getmtime(c) for c in covers + [path("books.json")]):
+        return
+    os.makedirs(path("og"), exist_ok=True)
+    im, d = _og_canvas()
+    x = 60
+    for c in covers:
+        x += _paste_cover(im, c, x, 160, 270) + 22
+    d.text((60, 42), "MASU  PHOTO", font=_font(FONT_EN, 30), fill=GOLD)
+    d.text((60, 86), "A wooden vessel traveling the world", font=_font(FONT_EN, 34), fill=TEXT)
+    d.text((60, 490), f"{len(books)} photo books  ·  free to read", font=_font(FONT_EN, 30), fill=MUTED)
+    d.text((60, 540), "枡フォト写真集 — 枡と旅する写真集", font=_font(FONT_JA, 30), fill=TEXT)
+    im.save(out, "JPEG", quality=86, optimize=True, progressive=True)
+    print("  created og/site.jpg")
+
+
 # ---------------------------------------------------------------- 共通パーツ
 
 def reader_html(book, pages, prefix, lang):
@@ -238,11 +313,13 @@ def book_page_en(book, pages, books, countries):
     <meta property="og:title" content="MASU PHOTO | {name} — Photo Book {n} ({y})">
     <meta property="og:description" content="Photographed in {name} in {y}. All {cnt} pages free to read.">
     <meta property="og:url" content="{url}">
-    <meta property="og:image" content="{SITE}/covers-lg/{s}.webp">
+    <meta property="og:image" content="{SITE}/og/{s}.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MASU PHOTO | {name}">
     <meta name="twitter:description" content="{y} · {name}. All {cnt} pages free to read.">
-    <meta name="twitter:image" content="{SITE}/covers-lg/{s}.webp">
+    <meta name="twitter:image" content="{SITE}/og/{s}.jpg">
     <meta name="theme-color" content="#0d0d0d">
     <script type="application/ld+json">
     {{
@@ -396,11 +473,13 @@ def book_page_ja(book, pages, books, countries):
     <meta property="og:title" content="枡フォト写真集｜{name}（第{n}巻・{y}）">
     <meta property="og:description" content="{y}年に{name}で撮影した枡フォト写真集 第{n}巻。全{cnt}ページを無料公開。">
     <meta property="og:url" content="{url}">
-    <meta property="og:image" content="{SITE}/covers-lg/{s}.webp">
+    <meta property="og:image" content="{SITE}/og/{s}.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="枡フォト写真集｜{name}">
     <meta name="twitter:description" content="{y}年・{name}。全{cnt}ページを無料で読めます。">
-    <meta name="twitter:image" content="{SITE}/covers-lg/{s}.webp">
+    <meta name="twitter:image" content="{SITE}/og/{s}.jpg">
     <meta name="theme-color" content="#0d0d0d">
     <script type="application/ld+json">
     {{
@@ -624,13 +703,27 @@ def sitemap(books):
     for b in books:
         urls.append((f"{SITE}/books/{b['slug']}/", "0.8", "monthly"))
         urls.append((f"{SITE}/ja/books/{b['slug']}/", "0.8", "monthly"))
-    body = "\n".join(f'''  <url>
+    # 写真集ページには、そのページに載っている写真を画像サイトマップとして添える（画像検索からの入口）
+    images = {}
+    for b in books:
+        folder = path("photobooks", b["slug"])
+        files = sorted((f for f in os.listdir(folder) if f.lower().endswith(SRC_EXT)), key=natural_key)
+        locs = [f"{SITE}/photobooks/{b['slug']}/{f}" for f in files]
+        images[f"{SITE}/books/{b['slug']}/"] = locs
+        images[f"{SITE}/ja/books/{b['slug']}/"] = locs
+
+    def entry(u, pr, f):
+        imgs = "".join(f"\n    <image:image><image:loc>{i}</image:loc></image:image>" for i in images.get(u, []))
+        return f"""  <url>
     <loc>{u}</loc>
     <lastmod>{TODAY}</lastmod>
     <changefreq>{f}</changefreq>
-    <priority>{pr}</priority>
-  </url>''' for u, pr, f in urls)
-    return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
+    <priority>{pr}</priority>{imgs}
+  </url>"""
+    body = "\n".join(entry(u, pr, f) for u, pr, f in urls)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + body + "\n</urlset>\n")
 
 
 def llms_txt(books, countries):
@@ -666,8 +759,11 @@ def build():
         print(f"[{b['number']:>2}] {b['name_en']}")
         pages = prepare_pages(b)
         prepare_covers(b, pages)
+        og_book(b, pages)
         write_if_changed(path("books", b["slug"], "index.html"), book_page_en(b, pages, books, countries))
         write_if_changed(path("ja", "books", b["slug"], "index.html"), book_page_ja(b, pages, books, countries))
+
+    og_site(books)
 
     p = path("index.html")
     t = open(p, encoding="utf-8").read()
