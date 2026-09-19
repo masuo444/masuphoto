@@ -5,6 +5,7 @@
     python3 build.py                 # 全冊を生成し直す
     python3 build.py import <slug> <画像フォルダ>
                                      # フォルダの画像をファイル名順に photobooks/<slug>/ へ取り込む
+    python3 build.py indexnow        # 公開後に全URLを Bing 等へ通知する
 
 写真集を1冊足す手順:
     1. books.json に1冊分を追記する（番号・国名・年など）
@@ -694,8 +695,25 @@ def build():
     print(f"done: {total} books, {countries} countries")
 
 
+INDEXNOW_KEY = "489c3bec7c9aceadf1a612aac5a4527f"  # ルートの <key>.txt と対で置く。消すと Bing 等への通知が認証されない
+
+
+def indexnow():
+    """sitemap.xml の全URLを IndexNow（Bing・Yandex 等が共有）に通知する。push して公開された後に実行する"""
+    import urllib.request
+    urls = re.findall(r"<loc>([^<]+)</loc>", open(path("sitemap.xml"), encoding="utf-8").read())
+    body = json.dumps({"host": "masuphoto.fomusglobal.com", "key": INDEXNOW_KEY,
+                       "keyLocation": f"{SITE}/{INDEXNOW_KEY}.txt", "urlList": urls}).encode()
+    req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                 headers={"Content-Type": "application/json; charset=utf-8"})
+    with urllib.request.urlopen(req) as res:
+        print(f"IndexNow: {len(urls)} URLs -> HTTP {res.status}")
+
+
 if __name__ == "__main__":
-    if len(sys.argv) >= 2 and sys.argv[1] == "import":
+    if len(sys.argv) >= 2 and sys.argv[1] == "indexnow":
+        indexnow()
+    elif len(sys.argv) >= 2 and sys.argv[1] == "import":
         if len(sys.argv) != 4:
             sys.exit("usage: python3 build.py import <slug> <folder>")
         import_pages(sys.argv[2], sys.argv[3])
