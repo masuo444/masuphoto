@@ -271,7 +271,7 @@ def shelf_cards(books, lang, href_prefix, cover_prefix, year_key, alt_style):
             alt, title = f"MASU PHOTO {name} cover", f"MASU PHOTO｜{name}"
         else:
             alt = f"枡フォト写真集 {name}（{b['name_en']}）の表紙" if alt_style == "home" else f"枡フォト写真集 {name}の表紙"
-            title = f"枡フォト｜{name}"
+            title = f"MASU PHOTO｜{b['name_en']}"  # 日本語版も英語表記でそろえる（2026-09 MaSU 指示）
         out.append(f'''                <a class="book-card" href="{href_prefix}{b['slug']}/">
                     <div class="{cls}">
                         <img src="{cover_prefix}covers-thumb/{b['slug']}.webp" width="440" height="605" alt="{esc(alt)}" loading="lazy">
