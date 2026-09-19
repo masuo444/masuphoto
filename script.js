@@ -297,8 +297,8 @@ function initLang() {
             sponsors_label: "SUPPORTED BY"
         },
         ja: {
-            hero_title: "枡が、世界を旅している。",
-            hero_lead: "手のひらに、枡がひとつ。<br>それだけで、心が動く瞬間がある。",
+            hero_title: "世界を、枡で撮る。",
+            hero_lead: "手にしているのは、<br>いつも同じひとつの枡。",
             hero_btn: "写真集を見る",
             about_title: "MASU PHOTO とは",
             about_body: "枡 ——<br>何百年もの時を経て受け継がれてきた、日本の器。<br><br>ひとつ手に取るだけで、<br>光や空気、人の気配が静かに立ち上がる。<br><br>古い形が、<br>現代アートとして生まれ変わる。",
