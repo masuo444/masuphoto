@@ -68,8 +68,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../styles.css">
-    <link rel="stylesheet" href="../../../book.css">
+    <link rel="stylesheet" href="../../../styles.css?v=a9d8da7b">
+    <link rel="stylesheet" href="../../../book.css?v=906954d9">
 </head>
 <body>
     <div class="noise"></div>
@@ -97,7 +97,7 @@
 
         <section class="book-detail" data-animate>
             <div class="book-detail-cover">
-                <a href="https://masuphoto-ireland.fomusglobal.com/">
+                <a href="#read">
                     <img src="../../../covers-lg/ireland.webp" width="640" height="880"
                          alt="枡フォト写真集｜アイルランド（第10巻）の表紙" fetchpriority="high">
                 </a>
@@ -113,14 +113,52 @@
                     <dt>閲覧</dt><dd>無料・登録不要</dd>
                 </dl>
                 <p class="book-note">枡フォト写真集シリーズの第10巻です。2024–2025年にアイルランドで撮影した全20ページを、オンラインで無料公開しています。</p>
-                <a class="btn" href="https://masuphoto-ireland.fomusglobal.com/">写真集を読む　→</a>
+                <a class="btn" href="#read">写真集を読む　↓</a>
+            </div>
+        </section>
+
+        <section class="reader" id="read" data-reader style="--pr: 0.7156">
+            <p class="reader-head">写真集を読む</p>
+            <p class="reader-hint">ページの角をつまんで捲れます（矢印キーでも操作できます）</p>
+            <div class="reader-spread-wrap">
+                <div class="reader-spread">
+                    <div class="reader-edge reader-edge-left" aria-hidden="true"></div>
+                    <div class="reader-book"></div>
+                    <div class="reader-edge reader-edge-right" aria-hidden="true"></div>
+                    <button class="reader-nav prev" type="button" aria-label="前のページ">‹</button>
+                    <button class="reader-nav next" type="button" aria-label="次のページ">›</button>
+                </div>
+                <p class="reader-indicator" aria-live="polite"></p>
+                <div class="reader-thumbs"></div>
+            </div>
+            <div class="reader-scroll">
+                <img src="../../../photobooks/ireland/001.jpg" srcset="../../../photobooks/ireland/sm/001.webp 800w, ../../../photobooks/ireland/001.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/001.webp" alt="枡フォト写真集 アイルランド 1ページ目" loading="eager" decoding="async">
+                <img class="is-blank" src="../../../photobooks/ireland/002.jpg" srcset="../../../photobooks/ireland/sm/002.webp 800w, ../../../photobooks/ireland/002.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/002.webp" alt="枡フォト写真集 アイルランド 2ページ目" loading="eager" decoding="async">
+                <img src="../../../photobooks/ireland/003.jpg" srcset="../../../photobooks/ireland/sm/003.webp 800w, ../../../photobooks/ireland/003.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/003.webp" alt="枡フォト写真集 アイルランド 3ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/004.jpg" srcset="../../../photobooks/ireland/sm/004.webp 800w, ../../../photobooks/ireland/004.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/004.webp" alt="枡フォト写真集 アイルランド 4ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/005.jpg" srcset="../../../photobooks/ireland/sm/005.webp 800w, ../../../photobooks/ireland/005.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/005.webp" alt="枡フォト写真集 アイルランド 5ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/006.jpg" srcset="../../../photobooks/ireland/sm/006.webp 800w, ../../../photobooks/ireland/006.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/006.webp" alt="枡フォト写真集 アイルランド 6ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/007.jpg" srcset="../../../photobooks/ireland/sm/007.webp 800w, ../../../photobooks/ireland/007.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/007.webp" alt="枡フォト写真集 アイルランド 7ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/008.jpg" srcset="../../../photobooks/ireland/sm/008.webp 800w, ../../../photobooks/ireland/008.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/008.webp" alt="枡フォト写真集 アイルランド 8ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/009.jpg" srcset="../../../photobooks/ireland/sm/009.webp 800w, ../../../photobooks/ireland/009.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/009.webp" alt="枡フォト写真集 アイルランド 9ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/010.jpg" srcset="../../../photobooks/ireland/sm/010.webp 800w, ../../../photobooks/ireland/010.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/010.webp" alt="枡フォト写真集 アイルランド 10ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/011.jpg" srcset="../../../photobooks/ireland/sm/011.webp 800w, ../../../photobooks/ireland/011.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/011.webp" alt="枡フォト写真集 アイルランド 11ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/012.jpg" srcset="../../../photobooks/ireland/sm/012.webp 800w, ../../../photobooks/ireland/012.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/012.webp" alt="枡フォト写真集 アイルランド 12ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/013.jpg" srcset="../../../photobooks/ireland/sm/013.webp 800w, ../../../photobooks/ireland/013.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/013.webp" alt="枡フォト写真集 アイルランド 13ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/014.jpg" srcset="../../../photobooks/ireland/sm/014.webp 800w, ../../../photobooks/ireland/014.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/014.webp" alt="枡フォト写真集 アイルランド 14ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/015.jpg" srcset="../../../photobooks/ireland/sm/015.webp 800w, ../../../photobooks/ireland/015.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/015.webp" alt="枡フォト写真集 アイルランド 15ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/016.jpg" srcset="../../../photobooks/ireland/sm/016.webp 800w, ../../../photobooks/ireland/016.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/016.webp" alt="枡フォト写真集 アイルランド 16ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/017.jpg" srcset="../../../photobooks/ireland/sm/017.webp 800w, ../../../photobooks/ireland/017.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/017.webp" alt="枡フォト写真集 アイルランド 17ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/018.jpg" srcset="../../../photobooks/ireland/sm/018.webp 800w, ../../../photobooks/ireland/018.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/018.webp" alt="枡フォト写真集 アイルランド 18ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/019.jpg" srcset="../../../photobooks/ireland/sm/019.webp 800w, ../../../photobooks/ireland/019.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/019.webp" alt="枡フォト写真集 アイルランド 19ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/ireland/020.jpg" srcset="../../../photobooks/ireland/sm/020.webp 800w, ../../../photobooks/ireland/020.jpg 1288w" sizes="(max-width: 760px) 100vw, 760px" width="1288" height="1800" data-thumb="../../../photobooks/ireland/th/020.webp" alt="枡フォト写真集 アイルランド 20ページ目" loading="lazy" decoding="async">
             </div>
         </section>
 
         <section class="section-bookshelf" id="other-books">
             <div class="bookshelf-header" data-animate>
                 <h2>他の枡フォト写真集</h2>
-                <p>枡フォトは全12冊、20カ国を旅した記録です。</p>
+                <p>枡フォトは全13冊、20カ国を旅した記録です。</p>
             </div>
             <div class="bookshelf-scroll" data-animate>
                 <a class="book-card" href="../japan/">
@@ -232,6 +270,16 @@
                         <span class="book-year">2024</span>
                     </div>
                 </a>
+
+                <a class="book-card" href="../bahrain/">
+                    <div class="book-cover book-cover-flat">
+                        <img src="../../../covers-thumb/bahrain.webp" width="440" height="605" alt="枡フォト写真集 バーレーンの表紙" loading="lazy">
+                    </div>
+                    <div class="book-meta">
+                        <h3>枡フォト｜バーレーン</h3>
+                        <span class="book-year">2026</span>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
@@ -240,6 +288,8 @@
         <p>&copy; 枡フォト｜MASU PHOTO ONLINE ARCHIVE</p>
     </footer>
 
-    <script src="../../../script.js"></script>
+    <script src="../../../script.js?v=1af18d0c"></script>
+    <script src="../../../vendor/page-flip.browser.js?v=d4379974"></script>
+    <script src="../../../reader.js?v=88d2e052"></script>
 </body>
 </html>

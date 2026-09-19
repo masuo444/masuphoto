@@ -100,3 +100,192 @@
         text-align: left;
     }
 }
+
+/* ===== 写真集ビューア（books/<slug>/ と ja/books/<slug>/ 共通） =====
+   PC: 見開き＋サムネイル / スマホ: 全ページを縦に並べる。
+   ページの縦横比は build.py が --pr（幅÷高さ）として書き込む。 */
+
+.reader {
+    --page-h: min(66vh, 760px);
+    padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px);
+    background: radial-gradient(circle at top, #26211a 0%, #050505 60%);
+    scroll-margin-top: 60px;
+}
+
+.reader-head {
+    text-align: center;
+    margin: 0 0 28px;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.reader-hint {
+    margin: -16px 0 26px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: rgba(245, 241, 230, 0.4);
+}
+
+.reader-spread {
+    position: relative;
+    width: min(calc(var(--page-h) * var(--pr) * 2), 84vw);
+    margin: 0 auto;
+    --edge-l: 1px;
+    --edge-r: 11px;
+}
+
+.reader-book {
+    filter: drop-shadow(0 34px 50px rgba(0, 0, 0, 0.75));
+}
+
+/* 1枚の紙。見開きの内側（綴じ目）に向かって沈む陰影を重ねる */
+.reader-leaf {
+    background: #f4f1ea;
+    overflow: hidden;
+}
+
+.reader-leaf img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.reader-leaf::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.reader-leaf.is-left::after {
+    background:
+        linear-gradient(to left, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.08) 3.5%, transparent 9%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.06), transparent 4%);
+}
+
+.reader-leaf.is-right::after {
+    background:
+        linear-gradient(to right, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.08) 3.5%, transparent 9%),
+        linear-gradient(to left, rgba(255, 255, 255, 0.06), transparent 4%);
+}
+
+/* 小口（本の厚み）。reader.js が残りページ数に合わせて幅と位置を決める */
+.reader-edge {
+    position: absolute;
+    pointer-events: none;
+    background: repeating-linear-gradient(to right, #e9e4d8 0 1px, #b9b2a3 1px 2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+.reader-edge-left {
+    width: var(--edge-l);
+    border-radius: 3px 0 0 3px;
+}
+
+.reader-edge-right {
+    width: var(--edge-r);
+    border-radius: 0 3px 3px 0;
+}
+
+.reader.is-fallback .reader-spread-wrap { display: none !important; }
+.reader.is-fallback .reader-scroll { display: flex !important; }
+
+.reader-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(215, 188, 117, 0.55);
+    color: #f5f1e6;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.reader-nav.prev { left: -66px; }
+.reader-nav.next { right: -66px; }
+.reader-nav:hover { background: rgba(0, 0, 0, 0.9); }
+.reader-nav:disabled { opacity: 0.25; cursor: default; }
+
+.reader-indicator {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: rgba(245, 241, 230, 0.7);
+}
+
+.reader-thumbs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    max-width: min(1100px, 92vw);
+    margin: 22px auto 0;
+    padding: 4px 2px 10px;
+    scrollbar-width: thin;
+}
+
+.reader-thumb {
+    flex: 0 0 auto;
+    padding: 0;
+    border: 0;
+    background: none;
+    opacity: 0.45;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.reader-thumb img {
+    display: block;
+    height: 64px;
+    width: auto;
+    aspect-ratio: var(--pr);
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.reader-thumb.is-active {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* スマホ用の縦並び。JS が無くても全ページ読める（クローラもここで画像を拾う） */
+.reader-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.reader-scroll img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--pr);
+    background: #151313;
+}
+
+.reader-scroll .is-blank { display: none; }
+
+.reader-spread-wrap { display: none; }
+
+@media (min-width: 901px) {
+    :root:not(.no-js) .reader-spread-wrap { display: block; }
+    :root:not(.no-js) .reader-scroll { display: none; }
+}
+
+@media (max-width: 900px) {
+    .reader { padding: 24px 0 48px; background: #0d0d0d; }
+}

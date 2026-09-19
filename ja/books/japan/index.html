@@ -68,8 +68,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../styles.css">
-    <link rel="stylesheet" href="../../../book.css">
+    <link rel="stylesheet" href="../../../styles.css?v=a9d8da7b">
+    <link rel="stylesheet" href="../../../book.css?v=906954d9">
 </head>
 <body>
     <div class="noise"></div>
@@ -97,7 +97,7 @@
 
         <section class="book-detail" data-animate>
             <div class="book-detail-cover">
-                <a href="https://masuphoto-japan.fomusglobal.com/">
+                <a href="#read">
                     <img src="../../../covers-lg/japan.webp" width="640" height="880"
                          alt="枡フォト写真集｜日本（第1巻）の表紙" fetchpriority="high">
                 </a>
@@ -113,14 +113,78 @@
                     <dt>閲覧</dt><dd>無料・登録不要</dd>
                 </dl>
                 <p class="book-note">枡フォト写真集シリーズの第1巻です。2022年に日本で撮影した全46ページを、オンラインで無料公開しています。</p>
-                <a class="btn" href="https://masuphoto-japan.fomusglobal.com/">写真集を読む　→</a>
+                <a class="btn" href="#read">写真集を読む　↓</a>
+            </div>
+        </section>
+
+        <section class="reader" id="read" data-reader style="--pr: 0.7273">
+            <p class="reader-head">写真集を読む</p>
+            <p class="reader-hint">ページの角をつまんで捲れます（矢印キーでも操作できます）</p>
+            <div class="reader-spread-wrap">
+                <div class="reader-spread">
+                    <div class="reader-edge reader-edge-left" aria-hidden="true"></div>
+                    <div class="reader-book"></div>
+                    <div class="reader-edge reader-edge-right" aria-hidden="true"></div>
+                    <button class="reader-nav prev" type="button" aria-label="前のページ">‹</button>
+                    <button class="reader-nav next" type="button" aria-label="次のページ">›</button>
+                </div>
+                <p class="reader-indicator" aria-live="polite"></p>
+                <div class="reader-thumbs"></div>
+            </div>
+            <div class="reader-scroll">
+                <img src="../../../photobooks/japan/001.jpg" srcset="../../../photobooks/japan/sm/001.webp 800w, ../../../photobooks/japan/001.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/001.webp" alt="枡フォト写真集 日本 1ページ目" loading="eager" decoding="async">
+                <img class="is-blank" src="../../../photobooks/japan/002.jpg" srcset="../../../photobooks/japan/sm/002.webp 800w, ../../../photobooks/japan/002.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/002.webp" alt="枡フォト写真集 日本 2ページ目" loading="eager" decoding="async">
+                <img src="../../../photobooks/japan/003.jpg" srcset="../../../photobooks/japan/sm/003.webp 800w, ../../../photobooks/japan/003.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/003.webp" alt="枡フォト写真集 日本 3ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/004.jpg" srcset="../../../photobooks/japan/sm/004.webp 800w, ../../../photobooks/japan/004.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/004.webp" alt="枡フォト写真集 日本 4ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/005.jpg" srcset="../../../photobooks/japan/sm/005.webp 800w, ../../../photobooks/japan/005.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/005.webp" alt="枡フォト写真集 日本 5ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/006.jpg" srcset="../../../photobooks/japan/sm/006.webp 800w, ../../../photobooks/japan/006.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/006.webp" alt="枡フォト写真集 日本 6ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/007.jpg" srcset="../../../photobooks/japan/sm/007.webp 800w, ../../../photobooks/japan/007.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/007.webp" alt="枡フォト写真集 日本 7ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/008.jpg" srcset="../../../photobooks/japan/sm/008.webp 800w, ../../../photobooks/japan/008.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/008.webp" alt="枡フォト写真集 日本 8ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/009.jpg" srcset="../../../photobooks/japan/sm/009.webp 800w, ../../../photobooks/japan/009.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/009.webp" alt="枡フォト写真集 日本 9ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/010.jpg" srcset="../../../photobooks/japan/sm/010.webp 800w, ../../../photobooks/japan/010.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/010.webp" alt="枡フォト写真集 日本 10ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/011.jpg" srcset="../../../photobooks/japan/sm/011.webp 800w, ../../../photobooks/japan/011.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/011.webp" alt="枡フォト写真集 日本 11ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/012.jpg" srcset="../../../photobooks/japan/sm/012.webp 800w, ../../../photobooks/japan/012.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/012.webp" alt="枡フォト写真集 日本 12ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/013.jpg" srcset="../../../photobooks/japan/sm/013.webp 800w, ../../../photobooks/japan/013.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/013.webp" alt="枡フォト写真集 日本 13ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/014.jpg" srcset="../../../photobooks/japan/sm/014.webp 800w, ../../../photobooks/japan/014.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/014.webp" alt="枡フォト写真集 日本 14ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/015.jpg" srcset="../../../photobooks/japan/sm/015.webp 800w, ../../../photobooks/japan/015.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/015.webp" alt="枡フォト写真集 日本 15ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/016.jpg" srcset="../../../photobooks/japan/sm/016.webp 800w, ../../../photobooks/japan/016.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/016.webp" alt="枡フォト写真集 日本 16ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/017.jpg" srcset="../../../photobooks/japan/sm/017.webp 800w, ../../../photobooks/japan/017.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/017.webp" alt="枡フォト写真集 日本 17ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/018.jpg" srcset="../../../photobooks/japan/sm/018.webp 800w, ../../../photobooks/japan/018.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/018.webp" alt="枡フォト写真集 日本 18ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/019.jpg" srcset="../../../photobooks/japan/sm/019.webp 800w, ../../../photobooks/japan/019.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/019.webp" alt="枡フォト写真集 日本 19ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/020.jpg" srcset="../../../photobooks/japan/sm/020.webp 800w, ../../../photobooks/japan/020.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/020.webp" alt="枡フォト写真集 日本 20ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/021.jpg" srcset="../../../photobooks/japan/sm/021.webp 800w, ../../../photobooks/japan/021.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/021.webp" alt="枡フォト写真集 日本 21ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/022.jpg" srcset="../../../photobooks/japan/sm/022.webp 800w, ../../../photobooks/japan/022.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/022.webp" alt="枡フォト写真集 日本 22ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/023.jpg" srcset="../../../photobooks/japan/sm/023.webp 800w, ../../../photobooks/japan/023.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/023.webp" alt="枡フォト写真集 日本 23ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/024.jpg" srcset="../../../photobooks/japan/sm/024.webp 800w, ../../../photobooks/japan/024.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/024.webp" alt="枡フォト写真集 日本 24ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/025.jpg" srcset="../../../photobooks/japan/sm/025.webp 800w, ../../../photobooks/japan/025.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/025.webp" alt="枡フォト写真集 日本 25ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/026.jpg" srcset="../../../photobooks/japan/sm/026.webp 800w, ../../../photobooks/japan/026.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/026.webp" alt="枡フォト写真集 日本 26ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/027.jpg" srcset="../../../photobooks/japan/sm/027.webp 800w, ../../../photobooks/japan/027.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/027.webp" alt="枡フォト写真集 日本 27ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/028.jpg" srcset="../../../photobooks/japan/sm/028.webp 800w, ../../../photobooks/japan/028.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/028.webp" alt="枡フォト写真集 日本 28ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/029.jpg" srcset="../../../photobooks/japan/sm/029.webp 800w, ../../../photobooks/japan/029.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/029.webp" alt="枡フォト写真集 日本 29ページ目" loading="lazy" decoding="async">
+                <img class="is-blank" src="../../../photobooks/japan/030.jpg" srcset="../../../photobooks/japan/sm/030.webp 800w, ../../../photobooks/japan/030.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/030.webp" alt="枡フォト写真集 日本 30ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/031.jpg" srcset="../../../photobooks/japan/sm/031.webp 800w, ../../../photobooks/japan/031.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/031.webp" alt="枡フォト写真集 日本 31ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/032.jpg" srcset="../../../photobooks/japan/sm/032.webp 800w, ../../../photobooks/japan/032.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/032.webp" alt="枡フォト写真集 日本 32ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/033.jpg" srcset="../../../photobooks/japan/sm/033.webp 800w, ../../../photobooks/japan/033.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/033.webp" alt="枡フォト写真集 日本 33ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/034.jpg" srcset="../../../photobooks/japan/sm/034.webp 800w, ../../../photobooks/japan/034.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/034.webp" alt="枡フォト写真集 日本 34ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/035.jpg" srcset="../../../photobooks/japan/sm/035.webp 800w, ../../../photobooks/japan/035.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/035.webp" alt="枡フォト写真集 日本 35ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/036.jpg" srcset="../../../photobooks/japan/sm/036.webp 800w, ../../../photobooks/japan/036.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/036.webp" alt="枡フォト写真集 日本 36ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/037.jpg" srcset="../../../photobooks/japan/sm/037.webp 800w, ../../../photobooks/japan/037.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/037.webp" alt="枡フォト写真集 日本 37ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/038.jpg" srcset="../../../photobooks/japan/sm/038.webp 800w, ../../../photobooks/japan/038.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/038.webp" alt="枡フォト写真集 日本 38ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/039.jpg" srcset="../../../photobooks/japan/sm/039.webp 800w, ../../../photobooks/japan/039.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/039.webp" alt="枡フォト写真集 日本 39ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/040.jpg" srcset="../../../photobooks/japan/sm/040.webp 800w, ../../../photobooks/japan/040.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/040.webp" alt="枡フォト写真集 日本 40ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/041.jpg" srcset="../../../photobooks/japan/sm/041.webp 800w, ../../../photobooks/japan/041.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/041.webp" alt="枡フォト写真集 日本 41ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/042.jpg" srcset="../../../photobooks/japan/sm/042.webp 800w, ../../../photobooks/japan/042.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/042.webp" alt="枡フォト写真集 日本 42ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/043.jpg" srcset="../../../photobooks/japan/sm/043.webp 800w, ../../../photobooks/japan/043.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/043.webp" alt="枡フォト写真集 日本 43ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/044.jpg" srcset="../../../photobooks/japan/sm/044.webp 800w, ../../../photobooks/japan/044.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/044.webp" alt="枡フォト写真集 日本 44ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/045.jpg" srcset="../../../photobooks/japan/sm/045.webp 800w, ../../../photobooks/japan/045.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/045.webp" alt="枡フォト写真集 日本 45ページ目" loading="lazy" decoding="async">
+                <img src="../../../photobooks/japan/046.jpg" srcset="../../../photobooks/japan/sm/046.webp 800w, ../../../photobooks/japan/046.jpg 800w" sizes="(max-width: 760px) 100vw, 760px" width="800" height="1100" data-thumb="../../../photobooks/japan/th/046.webp" alt="枡フォト写真集 日本 46ページ目" loading="lazy" decoding="async">
             </div>
         </section>
 
         <section class="section-bookshelf" id="other-books">
             <div class="bookshelf-header" data-animate>
                 <h2>他の枡フォト写真集</h2>
-                <p>枡フォトは全12冊、20カ国を旅した記録です。</p>
+                <p>枡フォトは全13冊、20カ国を旅した記録です。</p>
             </div>
             <div class="bookshelf-scroll" data-animate>
                 <a class="book-card" href="../taiwan/">
@@ -232,6 +296,16 @@
                         <span class="book-year">2024</span>
                     </div>
                 </a>
+
+                <a class="book-card" href="../bahrain/">
+                    <div class="book-cover book-cover-flat">
+                        <img src="../../../covers-thumb/bahrain.webp" width="440" height="605" alt="枡フォト写真集 バーレーンの表紙" loading="lazy">
+                    </div>
+                    <div class="book-meta">
+                        <h3>枡フォト｜バーレーン</h3>
+                        <span class="book-year">2026</span>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
@@ -240,6 +314,8 @@
         <p>&copy; 枡フォト｜MASU PHOTO ONLINE ARCHIVE</p>
     </footer>
 
-    <script src="../../../script.js"></script>
+    <script src="../../../script.js?v=1af18d0c"></script>
+    <script src="../../../vendor/page-flip.browser.js?v=d4379974"></script>
+    <script src="../../../reader.js?v=88d2e052"></script>
 </body>
 </html>

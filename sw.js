@@ -1,4 +1,4 @@
-const CACHE_NAME = "masuphoto-v1";
+const CACHE_NAME = "masuphoto-v2";
 const ASSETS = [
     "/",
     "/index.html",
@@ -25,6 +25,9 @@ self.addEventListener("activate", event => {
 });
 
 self.addEventListener("fetch", event => {
+    // 写真集の画像（全冊で100MB超）は端末に溜めない。ブラウザの通常キャッシュに任せる
+    const url = new URL(event.request.url);
+    if (event.request.method !== "GET" || url.origin !== location.origin || url.pathname.startsWith("/photobooks/")) return;
     event.respondWith(
         fetch(event.request)
             .then(response => {

@@ -1,0 +1,159 @@
+{
+  "countries": 20,
+  "books": [
+    {
+      "slug": "japan",
+      "number": 1,
+      "name_en": "Japan",
+      "name_ja": "日本",
+      "year": "2022",
+      "year_shelf": "2022",
+      "date_published": "2022",
+      "edition": "First Photo Book",
+      "legacy_subdomain": "masuphoto-japan",
+      "flat_cover": false
+    },
+    {
+      "slug": "taiwan",
+      "number": 2,
+      "name_en": "Taiwan",
+      "name_ja": "台湾",
+      "year": "2023",
+      "year_shelf": "2023",
+      "date_published": "2023",
+      "edition": "Book Two",
+      "legacy_subdomain": "masuphoto-taiwan",
+      "flat_cover": false
+    },
+    {
+      "slug": "malaysia",
+      "number": 3,
+      "name_en": "Malaysia",
+      "name_ja": "マレーシア",
+      "year": "2023",
+      "year_shelf": "2023",
+      "date_published": "2023",
+      "edition": "Book Three",
+      "legacy_subdomain": "masuphoto-malaysia",
+      "flat_cover": false
+    },
+    {
+      "slug": "philippines",
+      "number": 4,
+      "name_en": "Philippines",
+      "name_ja": "フィリピン",
+      "year": "2024",
+      "year_shelf": "2024",
+      "date_published": "2024",
+      "edition": "Book Four",
+      "legacy_subdomain": "masuphoto-philippine",
+      "flat_cover": false
+    },
+    {
+      "slug": "usa",
+      "number": 5,
+      "name_en": "USA",
+      "name_ja": "アメリカ",
+      "year": "2024",
+      "year_shelf": "2024",
+      "date_published": "2024",
+      "edition": "Book Five",
+      "legacy_subdomain": "masuphoto-usa",
+      "flat_cover": false
+    },
+    {
+      "slug": "spain",
+      "number": 6,
+      "name_en": "Spain",
+      "name_ja": "スペイン",
+      "year": "2024",
+      "year_shelf": "2024",
+      "date_published": "2024",
+      "edition": "Book Six",
+      "legacy_subdomain": "masuphoto-spain",
+      "flat_cover": false
+    },
+    {
+      "slug": "estonia",
+      "number": 7,
+      "name_en": "Estonia",
+      "name_ja": "エストニア",
+      "year": "2024",
+      "year_shelf": "2024",
+      "date_published": "2024",
+      "edition": "Quiet North",
+      "legacy_subdomain": "masuphoto-estonia",
+      "flat_cover": true
+    },
+    {
+      "slug": "lithuania",
+      "number": 8,
+      "name_en": "Lithuania",
+      "name_ja": "リトアニア",
+      "year": "2025",
+      "year_shelf": "2025",
+      "date_published": "2025",
+      "edition": "Lithuania",
+      "legacy_subdomain": "masuphoto-lithuania",
+      "flat_cover": true
+    },
+    {
+      "slug": "latvia",
+      "number": 9,
+      "name_en": "Latvia",
+      "name_ja": "ラトビア",
+      "year": "2025",
+      "year_shelf": "2025",
+      "date_published": "2025",
+      "edition": "Latvia",
+      "legacy_subdomain": "masuphoto-latvia",
+      "flat_cover": true
+    },
+    {
+      "slug": "ireland",
+      "number": 10,
+      "name_en": "Ireland",
+      "name_ja": "アイルランド",
+      "year": "2024–2025",
+      "year_shelf": "2024 / 2025",
+      "date_published": "2024",
+      "edition": "Ireland",
+      "legacy_subdomain": "masuphoto-ireland",
+      "flat_cover": true
+    },
+    {
+      "slug": "qatar",
+      "number": 11,
+      "name_en": "Qatar",
+      "name_ja": "カタール",
+      "year": "2025",
+      "year_shelf": "2025",
+      "date_published": "2025",
+      "edition": "Desert Mirage",
+      "legacy_subdomain": "masuphoto-qatar",
+      "flat_cover": true
+    },
+    {
+      "slug": "world",
+      "number": 12,
+      "name_en": "World",
+      "name_ja": "ワールド",
+      "year": "2024",
+      "year_shelf": "2024",
+      "date_published": "2024",
+      "edition": "World Journey",
+      "legacy_subdomain": "masuphoto-z",
+      "flat_cover": true
+    },
+    {
+      "slug": "bahrain",
+      "number": 13,
+      "name_en": "Bahrain",
+      "name_ja": "バーレーン",
+      "year": "2026",
+      "year_shelf": "2026",
+      "date_published": "2026",
+      "flat_cover": true
+    }
+  ]
+}

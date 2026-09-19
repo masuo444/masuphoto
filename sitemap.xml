@@ -1,236 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://masuphoto.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto.fomusglobal.com/partnership/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-japan.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-taiwan.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-malaysia.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-philippine.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-usa.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-spain.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-estonia.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-lithuania.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-latvia.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-ireland.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-qatar.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://masuphoto-z.fomusglobal.com/</loc>
-        <lastmod>2026-07-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.9</priority>
-    </url>
   <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://masuphoto.fomusglobal.com/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/japan/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://masuphoto.fomusglobal.com/ja/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/taiwan/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <loc>https://masuphoto.fomusglobal.com/partnership/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/malaysia/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/philippines/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/usa/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/spain/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/estonia/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/lithuania/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/latvia/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/ireland/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/qatar/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://masuphoto.fomusglobal.com/ja/books/world/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/japan/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/japan/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/taiwan/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/taiwan/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/malaysia/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/malaysia/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/philippines/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/philippines/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/usa/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/usa/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/spain/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/spain/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/estonia/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/estonia/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/lithuania/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/lithuania/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/latvia/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/latvia/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/ireland/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/ireland/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/qatar/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/qatar/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masuphoto.fomusglobal.com/books/world/</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/world/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/books/bahrain/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masuphoto.fomusglobal.com/ja/books/bahrain/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
