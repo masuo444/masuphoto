@@ -156,7 +156,7 @@ COMMISSION = {
     "en": {
         "name": "Commission",
         "title": "A MASU PHOTO Book for Your Country or City — Photo Book Projects for City & Destination Promotion",
-        "desc": "MASU PHOTO creates one photo book per country or region: the people of the place, photographed with the masu, Japan's traditional good-luck vessel, and published worldwide as a volume of the series. For national tourism boards, embassies, municipalities, DMOs and regional companies. Quoted individually.",
+        "desc": "MASU PHOTO creates one photo book per country or region: the people of the place, photographed with the masu, Japan's traditional good-luck vessel, and published worldwide as a volume of the series. For national tourism boards, municipalities, DMOs and regional companies, with embassies welcome as partners. Quoted individually.",
         "label": "COMMISSION",
         "h1": "Make a MASU PHOTO book of your country or city",
         "lead": "MASU PHOTO makes one photo book per country or region. We photograph the people of your place holding the masu — a traditional Japanese vessel whose name echoes “to increase” — and publish the result as a new volume of a series that already spans {countries} countries and {total} books. A project for destination and city promotion, cultural exchange and exhibitions.",
@@ -168,11 +168,12 @@ COMMISSION = {
         ],
         "menus_title": "Who we work with",
         "menus": [
-            ("01", "Countries, tourism boards & embassies", "A national volume for destination promotion or a cultural exchange programme with Japan."),
+            ("01", "National tourism boards", "A national volume for destination promotion abroad, or for a cultural exchange programme with Japan."),
             ("02", "Municipalities, tourism associations & DMOs", "A volume of your city or region for city promotion, tourism and relations with sister cities."),
             ("03", "Regional companies & organisations", "Sponsor or co-produce the volume of the region you belong to, credited in the book."),
             ("04", "Series sponsorship", "Support the MASU PHOTO series as a whole, credited across the online archive and future volumes."),
         ],
+        "partners_note": "Embassies and consulates are welcome as partners — through endorsement, local introductions or an exhibition venue — without a fee.",
         "uses_title": "How the book can be used",
         "uses": ["City and destination promotion", "Tourism websites and social media", "Cultural exchange and sister-city programmes",
                  "Exhibitions and events", "Gifts and presentations for guests"],
@@ -207,8 +208,8 @@ COMMISSION = {
         "form_lead": "We will reply by email. Your details are used only to respond to your inquiry.",
         "form": {
             "name": "Name", "org": "Organisation", "email": "Email",
-            "type": "Type of organisation", "types": ["Country / tourism board / embassy", "Municipality / tourism association / DMO",
-                                                      "Regional company / organisation", "Series sponsorship", "Other"],
+            "type": "Type of organisation", "types": ["National tourism board", "Municipality / tourism association / DMO",
+                                                      "Regional company / organisation", "Series sponsorship", "Embassy / consulate (partnership)", "Other"],
             "choose": "Please choose", "where": "Country / region", "where_ph": "e.g. Kyoto, Japan / Lisbon, Portugal",
             "when": "Preferred timing", "when_ph": "e.g. spring 2027", "msg": "Message",
             "msg_ph": "What would you like the book to achieve, and how do you plan to use it?",
@@ -219,7 +220,7 @@ COMMISSION = {
     "ja": {
         "name": "写真集プロジェクトのご依頼",
         "title": "あなたの国・地域の枡フォト写真集をつくる｜シティプロモーション・観光PRの写真集プロジェクト",
-        "desc": "枡フォトは、国や地域ごとに1冊の写真集をつくるプロジェクトです。その土地の人々を、日本の縁起物「枡」と一緒に撮影し、シリーズの1冊として世界に公開します。国・大使館・自治体・観光協会・DMO・地域企業からのご依頼を受け付けています。料金はお見積りです。",
+        "desc": "枡フォトは、国や地域ごとに1冊の写真集をつくるプロジェクトです。その土地の人々を、日本の縁起物「枡」と一緒に撮影し、シリーズの1冊として世界に公開します。政府観光局・自治体・観光協会・DMO・地域企業からのご依頼と、大使館・領事館とのご協力を受け付けています。料金はお見積りです。",
         "label": "写真集プロジェクト",
         "h1": "あなたの国・地域の枡フォト写真集をつくる",
         "lead": "枡フォトは、国や地域ごとに1冊の写真集をつくるプロジェクトです。その土地に暮らす人々を、「増す・益す」に通じる日本の縁起物「枡」と一緒に撮影し、{countries}カ国・{total}冊を数えるシリーズの新しい1冊として公開します。シティプロモーションや観光PR、国際交流、展示にご活用いただけます。",
@@ -231,11 +232,12 @@ COMMISSION = {
         ],
         "menus_title": "ご依頼いただける団体",
         "menus": [
-            ("01", "国・政府観光局・大使館", "国の観光PRや、日本との文化交流事業としての1冊。"),
+            ("01", "政府観光局", "海外に向けた国の観光PRや、日本との文化交流事業としての1冊。"),
             ("02", "自治体・観光協会・DMO", "シティプロモーション、観光誘客、姉妹都市との交流に向けた、市や地域の1冊。"),
             ("03", "地域の企業・団体", "自社が根ざす地域の1冊への協賛・共同制作。写真集にお名前を掲載します。"),
             ("04", "シリーズのスポンサー", "枡フォトシリーズ全体を支援いただき、オンラインアーカイブと今後の写真集にお名前を掲載します。"),
         ],
+        "partners_note": "大使館・領事館とは、後援や現地のご紹介、展示会場のご提供など、費用をともなわない形でのご協力も歓迎しています。",
         "uses_title": "写真集の活用例",
         "uses": ["シティプロモーション・観光PR", "観光サイト・SNSでの発信", "国際交流・姉妹都市との交流", "展示・イベント", "来賓・視察団への贈呈"],
         "mkt_title": "完成後の発信・マーケティングもお任せください",
@@ -269,7 +271,7 @@ COMMISSION = {
         "form_lead": "メールでご返信します。いただいた情報は、お問い合わせへの対応にのみ使います。",
         "form": {
             "name": "お名前", "org": "団体名・ご所属", "email": "メールアドレス",
-            "type": "団体の種類", "types": ["国・政府観光局・大使館", "自治体・観光協会・DMO", "地域の企業・団体", "シリーズのスポンサー", "その他"],
+            "type": "団体の種類", "types": ["政府観光局", "自治体・観光協会・DMO", "地域の企業・団体", "シリーズのスポンサー", "大使館・領事館（ご協力）", "その他"],
             "choose": "選択してください", "where": "対象の国・地域", "where_ph": "例：山梨県笛吹市／ポルトガル・リスボン",
             "when": "希望時期", "when_ph": "例：2027年春", "msg": "ご相談内容",
             "msg_ph": "写真集で実現したいこと、想定している活用方法などをお書きください",
@@ -381,6 +383,7 @@ def commission_page(lang, books, countries, total, ver):
             <div class="info-cards">
 {menus}
             </div>
+            <p class="info-note info-partners">{c["partners_note"]}</p>
         </section>
 
         <section class="info-section info-narrow" data-animate>

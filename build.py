@@ -251,6 +251,7 @@ def book_page_en(book, pages, books, countries):
         "name": "MASU PHOTO | {name}",
         "alternateName": "枡フォト写真集｜{name}",
         "description": "Book {n} of the MASU PHOTO series. Photographed in {name} in {y}, {cnt} pages.",
+        "abstract": {json.dumps(book.get("story_en", ""), ensure_ascii=False)},
         "datePublished": "{book['date_published']}",
         "numberOfPages": {cnt},
         "url": "{url}",
@@ -333,6 +334,7 @@ def book_page_en(book, pages, books, countries):
                     <dt>Photographed by</dt><dd>MaSU (KEI), founder of FOMUS</dd>
                     <dt>Access</dt><dd>Free, no sign-up</dd>
                 </dl>
+                {f'<p class="book-story">{esc(book["story_en"])}</p>' if book.get("story_en") else ""}
                 <p class="book-note">Book {n} of the MASU PHOTO series. Photographed in {name} in {y}, all {cnt} pages are free to read online.</p>
                 <a class="btn" href="#read">Read the photo book　↓</a>
             </div>
@@ -407,6 +409,7 @@ def book_page_ja(book, pages, books, countries):
         "name": "枡フォト写真集｜{name}",
         "alternateName": "MASU PHOTO | {en}",
         "description": "枡フォト写真集シリーズ第{n}巻。{y}年に{name}で撮影した全{cnt}ページの写真集。",
+        "abstract": {json.dumps(book.get("story_ja", ""), ensure_ascii=False)},
         "datePublished": "{book['date_published']}",
         "numberOfPages": {cnt},
         "url": "{url}",
@@ -493,6 +496,7 @@ def book_page_ja(book, pages, books, countries):
                     <dt>撮影</dt><dd>MaSU（KEI）／FOMUS 代表</dd>
                     <dt>閲覧</dt><dd>無料・登録不要</dd>
                 </dl>
+                {f'<p class="book-story">{esc(book["story_ja"])}</p>' if book.get("story_ja") else ""}
                 <p class="book-note">枡フォト写真集シリーズの第{n}巻です。{y}年に{name}で撮影した全{cnt}ページを、オンラインで無料公開しています。</p>
                 <a class="btn" href="#read">写真集を読む　↓</a>
             </div>
@@ -635,7 +639,7 @@ def llms_txt(books, countries):
              f"> MASU PHOTO is a photography project by MaSU (KEI, Keisuke Masuo), founder of FOMUS LLC (合同会社FOMUS). "
              f"Carrying a masu — a traditional Japanese wooden vessel and good-luck charm whose name echoes 'to increase' — "
              f"MaSU photographs people around the world. {len(books)} photo books from {countries} countries, all free to read on this site. "
-             f"MASU PHOTO takes photo book projects: one book per country or region, for city and destination promotion, commissioned by countries, tourism boards, embassies, municipalities, DMOs and regional companies (quoted individually; no individual portrait sessions). Optional promotion after publication: social media, social media advertising, video production, exhibitions and events, with a results report.", "",
+             f"MASU PHOTO takes photo book projects: one book per country or region, for city and destination promotion, commissioned by national tourism boards, municipalities, DMOs and regional companies, with embassies and consulates welcome as non-paying partners (quoted individually; no individual portrait sessions). Optional promotion after publication: social media, social media advertising, video production, exhibitions and events, with a results report.", "",
              "## Photo book projects / 写真集プロジェクトのご依頼",
              f"- [Commission (EN)]({SITE}/commission/): one MASU PHOTO book per country or region, for city and destination promotion",
              f"- [写真集プロジェクトのご依頼 (JA)]({SITE}/ja/commission/): 国・地域ごとに1冊の写真集をつくるプロジェクト（シティプロモーション・観光PR）", "",

@@ -11,7 +11,9 @@
       "date_published": "2022",
       "edition": "First Photo Book",
       "legacy_subdomain": "masuphoto-japan",
-      "flat_cover": false
+      "flat_cover": false,
+      "story_en": "The first MASU PHOTO book. Photographed in Japan in a wide range of settings — shrines and old streets, city centres and parks, snow scenes and a turquoise sea — with people in yukata and kimono, friends and families.",
+      "story_ja": "枡フォトの最初の1冊です。神社や古い町並み、都心のビル街や公園、雪景色、青い海辺など、日本のさまざまな場所で、浴衣や着物姿の人、友人や家族連れを撮影しています。"
     },
     {
       "slug": "taiwan",
@@ -23,7 +25,9 @@
       "date_published": "2023",
       "edition": "Book Two",
       "legacy_subdomain": "masuphoto-taiwan",
-      "flat_cover": false
+      "flat_cover": false,
+      "story_en": "Photographed in Taiwan, largely with runners and the people around them. In this volume two masu are held together to spell the word LOVE, against a backdrop of Taiwanese streets, temples and shopfronts.",
+      "story_ja": "台湾で、ランナーをはじめ、そのまわりの人たちを中心に撮影した1冊です。この巻では2つの枡を並べて「LOVE」の文字をつくり、台湾の街角や寺院、店先を背景に撮影しています。"
     },
     {
       "slug": "malaysia",
@@ -35,7 +39,9 @@
       "date_published": "2023",
       "edition": "Book Three",
       "legacy_subdomain": "masuphoto-malaysia",
-      "flat_cover": false
+      "flat_cover": false,
+      "story_en": "Photographed in Kuala Lumpur, with the Petronas Twin Towers and the Sultan Abdul Samad Building in the background. The book includes a portrait in front of the Malaysian flag and people wearing yukata.",
+      "story_ja": "クアラルンプールで、ペトロナスツインタワーやスルタン・アブドゥル・サマド・ビルを背景に撮影した1冊です。マレーシア国旗の前での一枚や、浴衣姿の人たちも収めています。"
     },
     {
       "slug": "philippines",
@@ -47,7 +53,9 @@
       "date_published": "2024",
       "edition": "Book Four",
       "legacy_subdomain": "masuphoto-philippine",
-      "flat_cover": false
+      "flat_cover": false,
+      "story_en": "The largest volume in the series, with 71 pages. Photographed in the Philippines on white-sand beaches and by turquoise water, in the city and at resorts, including group portraits of friends holding the masu together.",
+      "story_ja": "シリーズでいちばんページ数の多い、全71ページの1冊です。フィリピンの白い砂浜と青い海、街なかやリゾートで撮影し、友人同士で枡を手にした集合写真も収めています。"
     },
     {
       "slug": "usa",
@@ -59,7 +67,9 @@
       "date_published": "2024",
       "edition": "Book Five",
       "legacy_subdomain": "masuphoto-usa",
-      "flat_cover": false
+      "flat_cover": false,
+      "story_en": "Photographed in Los Angeles, Las Vegas and New York in 2024 — from the Route 66 sign on Santa Monica Pier to Times Square and Grand Central Terminal.",
+      "story_ja": "2024年に、ロサンゼルス・ラスベガス・ニューヨークの3都市で撮影した1冊です。サンタモニカ・ピアの「ROUTE 66」の標識から、タイムズスクエア、グランド・セントラル駅まで。"
     },
     {
       "slug": "spain",
@@ -71,7 +81,9 @@
       "date_published": "2024",
       "edition": "Book Six",
       "legacy_subdomain": "masuphoto-spain",
-      "flat_cover": false
+      "flat_cover": false,
+      "story_en": "Photographed in Madrid and Barcelona in 2024: the Plaza Mayor and Retiro Park in Madrid, and the Sagrada Família in Barcelona.",
+      "story_ja": "2024年に、マドリードとバルセロナで撮影した1冊です。マドリードのマヨール広場やレティーロ公園、バルセロナのサグラダ・ファミリアを背景にしています。"
     },
     {
       "slug": "estonia",
@@ -83,7 +95,9 @@
       "date_published": "2024",
       "edition": "Quiet North",
       "legacy_subdomain": "masuphoto-estonia",
-      "flat_cover": true
+      "flat_cover": true,
+      "story_en": "Photographed in Tallinn's old town in the autumn of 2024 — cobbled streets, medieval walls and towers, and café terraces.",
+      "story_ja": "2024年の秋、タリンの旧市街で撮影した1冊です。石畳の路地、中世の城壁や塔、カフェのテラスを背景にしています。"
     },
     {
       "slug": "lithuania",
@@ -95,7 +109,9 @@
       "date_published": "2025",
       "edition": "Lithuania",
       "legacy_subdomain": "masuphoto-lithuania",
-      "flat_cover": true
+      "flat_cover": true,
+      "story_en": "Photographed in Vilnius, Kaunas and Užupis in 2025, among old-town streets and red-brick towers, parks and fountains, under blue skies.",
+      "story_ja": "2025年に、ヴィリニュス、カウナス、ウジュピスで撮影した1冊です。旧市街の通りや赤れんがの塔、公園や噴水を、青空の下で撮影しています。"
     },
     {
       "slug": "latvia",
@@ -107,7 +123,9 @@
       "date_published": "2025",
       "edition": "Latvia",
       "legacy_subdomain": "masuphoto-latvia",
-      "flat_cover": true
+      "flat_cover": true,
+      "story_en": "Photographed in Riga in 2025 — from the House of Blackheads in the old town to cobbled streets, flower-covered doorways and modern architecture.",
+      "story_ja": "2025年にリガで撮影した1冊です。旧市街のブラックヘッドの家から、石畳の通り、花で飾られた扉、現代建築まで。"
     },
     {
       "slug": "ireland",
@@ -119,7 +137,9 @@
       "date_published": "2024",
       "edition": "Ireland",
       "legacy_subdomain": "masuphoto-ireland",
-      "flat_cover": true
+      "flat_cover": true,
+      "story_en": "Photographed in Dublin across 2024 and 2025 — the colourful pubs of Temple Bar, cobbled lanes, red brick and grey stone churches. The book includes a mother holding the masu with her baby.",
+      "story_ja": "2024年から2025年にかけて、ダブリンで撮影した1冊です。テンプル・バーのカラフルなパブ、石畳の路地、赤れんがの建物や石造りの教会を背景に、赤ちゃんと一緒に枡を持つお母さんの姿も収めています。"
     },
     {
       "slug": "qatar",
@@ -131,7 +151,9 @@
       "date_published": "2025",
       "edition": "Desert Mirage",
       "legacy_subdomain": "masuphoto-qatar",
-      "flat_cover": true
+      "flat_cover": true,
+      "story_en": "Photographed in Doha in 2025 — at the National Museum of Qatar with its desert-rose architecture, among brightly coloured containers and the towers of the city. It closes with the words: “This is only the beginning. The next chapter unfolds in 2026.”",
+      "story_ja": "2025年にドーハで撮影した1冊です。「砂漠のバラ」をかたどったカタール国立博物館や、色鮮やかなコンテナ、高層ビルの街並みを背景にしています。最後のページは「This is only the beginning. The next chapter unfolds in 2026.」の言葉で締めくくられています。"
     },
     {
       "slug": "world",
@@ -143,7 +165,9 @@
       "date_published": "2024",
       "edition": "World Journey",
       "legacy_subdomain": "masuphoto-z",
-      "flat_cover": true
+      "flat_cover": true,
+      "story_en": "A collection of MASU PHOTO shoots around the world, in chapters: Japan (from 2023), Malta, Athens and Cyprus (2024), and Brussels and Istanbul (2025). It closes with an invitation: your city might be the next destination.",
+      "story_ja": "世界各地での枡フォトの撮影を、章ごとにまとめた1冊です。日本（2023年〜）、マルタ・アテネ・キプロス（2024年）、ブリュッセル・イスタンブール（2025年）。最後は「あなたの街が、次の撮影地になるかもしれない」という呼びかけで締めくくられています。"
     },
     {
       "slug": "bahrain",
@@ -153,7 +177,9 @@
       "year": "2026",
       "year_shelf": "2026",
       "date_published": "2026",
-      "flat_cover": true
+      "flat_cover": true,
+      "story_en": "Photographed in Manama in 2026 — in front of arched Islamic architecture and minarets, along palm-lined streets, in gardens and beside modern sculpture.",
+      "story_ja": "2026年にマナーマで撮影した1冊です。アーチが連なるイスラム建築やミナレット、ヤシ並木の通り、庭園、現代彫刻の前で撮影しています。"
     }
   ]
 }
