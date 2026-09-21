@@ -302,7 +302,7 @@ def book_page_en(book, pages, books, countries):
     <script>document.documentElement.classList.remove("no-js");</script>
     <title>MASU PHOTO | {name} — Photo Book {n} ({y}), {cnt} pages free to read</title>
     <meta name="description" content="MASU PHOTO {name} is book {n} in the series. Photographed in {name} in {y}, all {cnt} pages are free to read online. By MaSU (KEI), founder of FOMUS.">
-    <meta name="keywords" content="MASU PHOTO {name}, masu photo, masu photo books, {name} photo book, 枡フォト {name}, FOMUS, MaSU KEI">
+    <meta name="keywords" content="masuphoto, MASU PHOTO {name}, masu photo, masu photo books, {name} photo book, 枡フォト {name}, FOMUS, MaSU KEI">
     <link rel="canonical" href="{url}">
     <link rel="alternate" hreflang="en" href="{url}">
     <link rel="alternate" hreflang="ja" href="{SITE}/ja/books/{s}/">
@@ -437,7 +437,7 @@ def book_page_en(book, pages, books, countries):
     </main>
 
     <footer class="site-footer">
-        <p>&copy; MASU PHOTO ONLINE ARCHIVE</p>
+        <p>&copy; MASU PHOTO ONLINE ARCHIVE — masuphoto.fomus.jp</p>
     </footer>
 
     <script src="../../script.js?v={ver("script.js")}"></script>
@@ -462,7 +462,7 @@ def book_page_ja(book, pages, books, countries):
     <script>document.documentElement.classList.remove("no-js");</script>
     <title>枡フォト写真集｜{name}（第{n}巻・{y}）— 全{cnt}ページを無料公開</title>
     <meta name="description" content="枡フォト写真集シリーズ第{n}巻。{y}年に{name}で撮影した全{cnt}ページを、オンラインで無料公開しています。撮影はFOMUS代表のMaSU（KEI）。">
-    <meta name="keywords" content="枡フォト,枡フォト写真集,枡フォト {name},MASU PHOTO {en},masu photo,{name} 写真集,FOMUS">
+    <meta name="keywords" content="masuphoto,枡フォト,枡フォト写真集,枡フォト {name},MASU PHOTO {en},masu photo,{name} 写真集,FOMUS">
     <link rel="canonical" href="{url}">
     <link rel="alternate" hreflang="ja" href="{url}">
     <link rel="alternate" hreflang="en" href="{SITE}/books/{s}/">
@@ -601,7 +601,7 @@ def book_page_ja(book, pages, books, countries):
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 枡フォト｜MASU PHOTO ONLINE ARCHIVE</p>
+        <p>&copy; 枡フォト｜MASU PHOTO ONLINE ARCHIVE — masuphoto.fomus.jp</p>
     </footer>
 
     <script src="../../../script.js?v={ver("script.js")}"></script>

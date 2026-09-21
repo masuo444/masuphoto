@@ -49,12 +49,12 @@ def shell(lang, slug, title, desc, body, ld, ver, books_nav=True):
         brand, toggle = "MASU PHOTO", f'<a class="lang-toggle" href="../ja/{slug}/" hreflang="ja" lang="ja">EN / 日本語</a>'
         nav = [("Home", home), ("Photo Books", home + "#photo-books"), ("About", root + "about/"),
                ("Why Masu", root + "masu/"), ("Commission", root + "commission/")]
-        site_name, locale, footer = "MASU PHOTO", "en_US", "&copy; MASU PHOTO ONLINE ARCHIVE"
+        site_name, locale, footer = "MASU PHOTO", "en_US", "&copy; MASU PHOTO ONLINE ARCHIVE — masuphoto.fomus.jp"
     else:
         brand, toggle = "枡フォト", f'<a class="lang-toggle" href="../../{slug}/" hreflang="en" lang="en">JA / EN</a>'
         nav = [("ホーム", home), ("写真集", home + "#photo-books"), ("作者について", "../about/"),
                ("枡について", "../masu/"), ("写真集プロジェクト", "../commission/")]
-        site_name, locale, footer = "枡フォト｜MASU PHOTO", "ja_JP", "&copy; 枡フォト｜MASU PHOTO ONLINE ARCHIVE"
+        site_name, locale, footer = "枡フォト｜MASU PHOTO", "ja_JP", "&copy; 枡フォト｜MASU PHOTO ONLINE ARCHIVE — masuphoto.fomus.jp"
     nav_html = "\n".join(f'            <a href="{h}">{t}</a>' for t, h in nav)
     ld_html = "\n".join(jsonld(o) for o in ld)
     return f'''<!DOCTYPE html>
