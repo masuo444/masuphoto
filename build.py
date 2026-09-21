@@ -221,6 +221,85 @@ def og_site(books):
     print("  created og/site.jpg")
 
 
+# ---------------------------------------------------------------- 写真1枚ごとの共有ページ
+# SNS に貼ったときにその写真が出るページ。検索の正は写真集ページなので canonical と noindex を付ける
+
+def share_page(book, pages, i, lang, ver):
+    """i: 1始まりのページ番号"""
+    s_, n, cnt = book["slug"], book["number"], len(pages)
+    p = pages[i - 1]
+    name = book["name_en"] if lang == "en" else book["name_ja"]
+    root = "../../../../" if lang == "en" else "../../../../../"
+    book_url = f"{SITE}/books/{s_}/" if lang == "en" else f"{SITE}/ja/books/{s_}/"
+    url = book_url + f"p/{i:02d}/"
+    img = f"{SITE}/photobooks/{s_}/{p['file']}"
+    if lang == "en":
+        title = f"MASU PHOTO | {name} — page {i} of {cnt}"
+        desc = f"One page from MASU PHOTO {name} (Book {n}), a photo book of people holding a masu, free to read."
+        back, all_pages, share_label = "MASU PHOTO", "See the whole book", "Share"
+        note = "MASU PHOTO travels the world with a masu, a traditional Japanese vessel, and publishes what it finds as free photo books."
+    else:
+        title = f"枡フォト写真集｜{name} — {i} / {cnt} ページ"
+        desc = f"枡フォト写真集 {name}（第{n}巻）の1ページ。枡を手にした人を撮影した写真集を、無料で公開しています。"
+        back, all_pages, share_label = "枡フォト", "この写真集をすべて見る", "共有する"
+        note = "枡フォトは、日本の伝統工芸「枡」を手に世界を旅し、出会った人を撮影して写真集として無料公開しています。"
+    return f'''<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content="{desc}">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="{book_url}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="{"MASU PHOTO" if lang == "en" else "枡フォト｜MASU PHOTO"}">
+    <meta property="og:title" content="{title}">
+    <meta property="og:description" content="{desc}">
+    <meta property="og:url" content="{url}">
+    <meta property="og:image" content="{img}">
+    <meta property="og:image:width" content="{p['w']}">
+    <meta property="og:image:height" content="{p['h']}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:image" content="{img}">
+    <meta name="theme-color" content="#0d0d0d">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Noto+Sans+JP:wght@200;300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{root}styles.css?v={ver("styles.css")}">
+    <link rel="stylesheet" href="{root}book.css?v={ver("book.css")}">
+    <link rel="stylesheet" href="{root}info.css?v={ver("info.css")}">
+</head>
+<body class="share-body">
+    <div class="noise"></div>
+    <header class="site-header">
+        <a class="brand" href="{root}{"" if lang == "en" else "ja/"}">{back}</a>
+    </header>
+    <main class="share-main">
+        <figure class="share-photo">
+            <img src="{root}photobooks/{s_}/{p['file']}"
+                 srcset="{root}photobooks/{s_}/sm/{p['stem']}.webp {SM_WIDTH}w, {root}photobooks/{s_}/{p['file']} {p['w']}w"
+                 sizes="(max-width: 760px) 100vw, 760px" width="{p['w']}" height="{p['h']}"
+                 alt="{esc(title)}" fetchpriority="high">
+            <figcaption>{title}</figcaption>
+        </figure>
+        <div class="share-actions">
+            <button class="btn" type="button" data-share data-title="{esc(title)}" data-url="{url}">{share_label}</button>
+            <a class="btn ghost" href="../../">{all_pages}　→</a>
+        </div>
+        <p class="share-note">{note}</p>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; MASU PHOTO ONLINE ARCHIVE — masuphoto.fomus.jp</p>
+    </footer>
+    <script src="{root}reader.js?v={ver("reader.js")}"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
+'''
+
+
 # ---------------------------------------------------------------- 共通パーツ
 
 def reader_html(book, pages, prefix, lang):
@@ -235,10 +314,11 @@ def reader_html(book, pages, prefix, lang):
         cls = ' class="is-blank"' if p["blank"] else ""
         loading = "eager" if i <= 2 else "lazy"
         imgs.append(
-            f'                <img{cls} src="{base}{p["file"]}" '
+            f'                <figure class="reader-page-item"><img{cls} src="{base}{p["file"]}" '
             f'srcset="{base}sm/{p["stem"]}.webp {SM_WIDTH}w, {base}{p["file"]} {p["w"]}w" '
             f'sizes="(max-width: 760px) 100vw, 760px" width="{p["w"]}" height="{p["h"]}" '
-            f'data-thumb="{base}th/{p["stem"]}.webp" alt="{esc(alt)}" loading="{loading}" decoding="async">')
+            f'data-thumb="{base}th/{p["stem"]}.webp" alt="{esc(alt)}" loading="{loading}" decoding="async">'
+            f'<a class="page-share" href="p/{i:02d}/">{"Share this page" if lang == "en" else "この写真を共有"}</a></figure>')
     head = "Photo Book" if lang == "en" else "写真集を読む"
     prev_l, next_l = ("Previous pages", "Next pages") if lang == "en" else ("前のページ", "次のページ")
     hint = "Drag a page corner, or use the arrow keys" if lang == "en" else "ページの角をつまんで捲れます（矢印キーでも操作できます）"
@@ -441,6 +521,7 @@ def book_page_en(book, pages, books, countries):
     </footer>
 
     <script src="../../script.js?v={ver("script.js")}"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <script src="../../vendor/page-flip.browser.js?v={ver("vendor/page-flip.browser.js")}"></script>
     <script src="../../reader.js?v={ver("reader.js")}"></script>
 </body>
@@ -605,6 +686,7 @@ def book_page_ja(book, pages, books, countries):
     </footer>
 
     <script src="../../../script.js?v={ver("script.js")}"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
     <script src="../../../vendor/page-flip.browser.js?v={ver("vendor/page-flip.browser.js")}"></script>
     <script src="../../../reader.js?v={ver("reader.js")}"></script>
 </body>
@@ -765,6 +847,9 @@ def build():
         og_book(b, pages)
         write_if_changed(path("books", b["slug"], "index.html"), book_page_en(b, pages, books, countries))
         write_if_changed(path("ja", "books", b["slug"], "index.html"), book_page_ja(b, pages, books, countries))
+        for i in range(1, len(pages) + 1):
+            write_if_changed(path("books", b["slug"], "p", f"{i:02d}", "index.html"), share_page(b, pages, i, "en", ver))
+            write_if_changed(path("ja", "books", b["slug"], "p", f"{i:02d}", "index.html"), share_page(b, pages, i, "ja", ver))
 
     og_site(books)
 

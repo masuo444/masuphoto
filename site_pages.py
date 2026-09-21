@@ -124,6 +124,7 @@ def shell(lang, slug, title, desc, body, ld, ver, books_nav=True):
 
     <script src="{root}script.js?v={ver("script.js")}"></script>
     <script src="{root}form.js?v={ver("form.js")}"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
 '''

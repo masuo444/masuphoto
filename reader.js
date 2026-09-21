@@ -353,4 +353,24 @@
             if (e.key === "Escape") close(false);
         });
     }
+
+    // 共有ボタン（端末の共有メニュー。使えない環境ではURLをコピー）
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("[data-share]").forEach(btn => {
+            btn.addEventListener("click", async () => {
+                const url = btn.dataset.url || location.href;
+                const title = btn.dataset.title || document.title;
+                try {
+                    if (navigator.share) {
+                        await navigator.share({ title, url });
+                        return;
+                    }
+                    await navigator.clipboard.writeText(url);
+                    const before = btn.textContent;
+                    btn.textContent = JA ? "リンクをコピーしました" : "Link copied";
+                    setTimeout(() => { btn.textContent = before; }, 2000);
+                } catch (e) { /* 共有をやめただけなので何もしない */ }
+            });
+        });
+    });
 })();
