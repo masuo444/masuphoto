@@ -697,7 +697,7 @@ def faq_count_en(text, books):
 def sitemap(books):
     urls = [(f"{SITE}/", "1.0", "weekly"), (f"{SITE}/ja/", "1.0", "weekly"),
             (f"{SITE}/partnership/", "0.6", "monthly")]
-    for slug in ("commission", "about", "masu"):
+    for slug in ("commission", "sponsor", "about", "masu"):
         urls.append((f"{SITE}/{slug}/", "0.9" if slug == "commission" else "0.7", "monthly"))
         urls.append((f"{SITE}/ja/{slug}/", "0.9" if slug == "commission" else "0.7", "monthly"))
     for b in books:
@@ -736,6 +736,9 @@ def llms_txt(books, countries):
              "## Photo book projects / 写真集プロジェクトのご依頼",
              f"- [Commission (EN)]({SITE}/commission/): one MASU PHOTO book per country or region, for city and destination promotion",
              f"- [写真集プロジェクトのご依頼 (JA)]({SITE}/ja/commission/): 国・地域ごとに1冊の写真集をつくるプロジェクト（シティプロモーション・観光PR）", "",
+             "## Sponsorship / スポンサー",
+             f"- [Sponsor MASU PHOTO]({SITE}/sponsor/): three plans from 100,000 yen a year; name credited in the photo books, the archive and social posts",
+             f"- [スポンサー]({SITE}/ja/sponsor/): 年10万円・30万円・100万円の3プラン。写真集・サイト・SNSに社名を掲載", "",
              "## About",
              f"- [About MaSU (KEI) and FOMUS]({SITE}/about/)", f"- [作者について]({SITE}/ja/about/)",
              f"- [Why the masu]({SITE}/masu/)", f"- [枡について]({SITE}/ja/masu/)", "",
@@ -789,6 +792,7 @@ def build():
         write_if_changed(path(base, "commission", "index.html"), site_pages.commission_page(lang, books, countries, total, ver))
         write_if_changed(path(base, "about", "index.html"), site_pages.about_page(lang, books, countries, ver))
         write_if_changed(path(base, "masu", "index.html"), site_pages.masu_page(lang, countries, total, ver))
+        write_if_changed(path(base, "sponsor", "index.html"), site_pages.sponsor_page(lang, countries, total, ver))
     write_if_changed(path("llms.txt"), llms_txt(books, countries))
 
     write_if_changed(path("sitemap.xml"), sitemap(books))

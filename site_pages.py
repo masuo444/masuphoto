@@ -3,7 +3,12 @@
 事実として書いてよいのは、このサイトと fomus.jp で公開済みのことだけ。
 料金はすべて要見積もり（2026-09 増尾さん決定）。大使館での展示は載せない。
 """
+import html
 import json
+
+
+def esc(v):
+    return html.escape(str(v), quote=True)
 
 SITE = "https://masuphoto.fomus.jp"
 ORG_ID = "https://www.fomus.jp/#organization"
@@ -48,12 +53,14 @@ def shell(lang, slug, title, desc, body, ld, ver, books_nav=True):
     if lang == "en":
         brand, toggle = "MASU PHOTO", f'<a class="lang-toggle" href="../ja/{slug}/" hreflang="ja" lang="ja">EN / 日本語</a>'
         nav = [("Home", home), ("Photo Books", home + "#photo-books"), ("About", root + "about/"),
-               ("Why Masu", root + "masu/"), ("Commission", root + "commission/")]
+               ("Why Masu", root + "masu/"), ("Commission", root + "commission/"),
+               ("Sponsor", root + "sponsor/")]
         site_name, locale, footer = "MASU PHOTO", "en_US", "&copy; MASU PHOTO ONLINE ARCHIVE — masuphoto.fomus.jp"
     else:
         brand, toggle = "枡フォト", f'<a class="lang-toggle" href="../../{slug}/" hreflang="en" lang="en">JA / EN</a>'
         nav = [("ホーム", home), ("写真集", home + "#photo-books"), ("作者について", "../about/"),
-               ("枡について", "../masu/"), ("写真集プロジェクト", "../commission/")]
+               ("枡について", "../masu/"), ("写真集プロジェクト", "../commission/"),
+               ("スポンサー", "../sponsor/")]
         site_name, locale, footer = "枡フォト｜MASU PHOTO", "ja_JP", "&copy; 枡フォト｜MASU PHOTO ONLINE ARCHIVE — masuphoto.fomus.jp"
     nav_html = "\n".join(f'            <a href="{h}">{t}</a>' for t, h in nav)
     ld_html = "\n".join(jsonld(o) for o in ld)
@@ -652,3 +659,280 @@ def masu_page(lang, countries, total, ver):
                "about": {"@type": "Thing", "name": "Masu" if lang == "en" else "枡",
                          "sameAs": "https://en.wikipedia.org/wiki/Masu_(measurement)" if lang == "en" else "https://ja.wikipedia.org/wiki/枡"}}
     return shell(lang, "masu", title, desc, body, [article, faq_ld(faq), breadcrumb(lang, "masu", name)], ver)
+
+
+# ------------------------------------------------------------------ スポンサー
+
+# 掲載中のスポンサー（ロゴは partnership/1..7.webp。リンクは 2026-09 に確認したもの）
+SPONSORS = [
+    ("KUKU", "https://www.fomus.jp/kuku/", "partnership/1.webp"),
+    ("CARDANO", None, "partnership/2.webp"),
+    ("大橋量器", "https://www.masukoubou.jp/", "partnership/3.webp"),
+    ("ADDress", "https://address.love/", "partnership/4.webp"),
+    ("Rickshaw Inn", "https://www.rickshawinn.com/", "partnership/5.webp"),
+    ("KOTO BUS", "https://www.kotobus.com/", "partnership/6.webp"),
+    ("PON FES", None, "partnership/7.webp"),
+]
+
+SPONSOR = {
+    "en": {
+        "name": "Sponsor",
+        "title": "Sponsor MASU PHOTO — Your Name in the Next Photo Book",
+        "desc": "Support MASU PHOTO and have your company credited in the next photo book, on every page of this archive and in our posts. Three plans from 100,000 yen a year. Already supported by seven companies.",
+        "label": "SPONSOR",
+        "h1": "Your name in the next book.",
+        "lead": "MASU PHOTO has been photographed in {countries} countries and published as {total} photo books, free to read. The next volume is made with the companies and people who support it — and their names stay in it.",
+        "why_title": "Why sponsor a photo book",
+        "why": [
+            ("It stays", "A campaign ends. A book does not. Your name stays in the volume and in this archive, read in English and Japanese, for as long as the project exists."),
+            ("It is culture, not advertising", "Your company appears as a supporter of Japanese culture — the masu, a craft of more than 1,300 years — rather than as an ad beside it."),
+            ("It travels", "The books are photographed abroad and published in two languages, so your name is seen outside Japan as well as in it."),
+        ],
+        "credit_title": "Where your name appears",
+        "credit_caption": "Example of the credit page. The design is finalised with you.",
+        "proof_title": "What you are supporting",
+        "proof": [
+            ("{total} photo books", "Photographed in {countries} countries since 2022, over 400 pages, all free to read."),
+            ("Shown at Japanese embassies", "FOMUS has exhibited the masu at receptions hosted by the Embassies of Japan in Ireland, Bahrain and Saudi Arabia."),
+            ("Seven supporters so far", "Companies from crafts, travel, transport and culture already support the series."),
+        ],
+        "sponsors_title": "Current supporters",
+        "plans_title": "Plans",
+        "plans_note": "Prices are per year, including tax. The credit starts with the next volume published after your support begins.",
+        "plans": [
+            ("SUPPORTER", "¥100,000", "/ year", ["Logo and link in the supporters section, reachable from every page"]),
+            ("PARTNER", "¥300,000", "/ year", ["Everything above",
+                                                "Your name and logo credited in the photo books published that year",
+                                                "Introduced in our social media posts"]),
+            ("MAIN PARTNER", "¥1,000,000", "/ one volume", ["Everything above",
+                                                            "Named partner of one volume, credited at its opening",
+                                                            "Placed at the top of the supporters section"]),
+        ],
+        "flow_title": "How it works",
+        "flow": [("Inquiry", "Tell us which plan interests you using the form below."),
+                 ("Talk it through", "We agree on the plan, the timing and how your name appears."),
+                 ("Support", "We send an invoice; you send your logo."),
+                 ("Published", "Your name goes live in the archive and is credited in the next volume.")],
+        "faq_title": "Questions",
+        "faq": [
+            ("Can an individual sponsor a book?", "Yes. Individuals are welcome, and a name can be listed instead of a company."),
+            ("When does the credit start?", "In the archive as soon as the support begins, and in the photo books published after that."),
+            ("How long does it last?", "One year for SUPPORTER and PARTNER. A MAIN PARTNER credit stays in that volume permanently."),
+            ("Can a company outside Japan sponsor?", "Yes. The books and this site are published in English and Japanese."),
+            ("Can we choose which country's volume we support?", "For MAIN PARTNER, yes — we decide the volume together."),
+        ],
+        "form_title": "Sponsorship inquiry",
+        "form_lead": "We will reply by email. Your details are used only to respond to your inquiry.",
+        "form": {
+            "name": "Name", "org": "Company / organisation", "email": "Email",
+            "type": "Plan", "types": ["SUPPORTER (¥100,000 / year)", "PARTNER (¥300,000 / year)",
+                                      "MAIN PARTNER (¥1,000,000 / volume)", "Not decided yet"],
+            "choose": "Please choose", "msg": "Message",
+            "msg_ph": "Anything you would like to ask or tell us.",
+            "submit": "Send inquiry", "optional": "optional", "subject": "MASU PHOTO sponsorship inquiry",
+        },
+    },
+    "ja": {
+        "name": "スポンサー",
+        "title": "枡フォトのスポンサー｜次の1冊に、あなたの名前を残す",
+        "desc": "枡フォト写真集のスポンサーを募集しています。写真集のクレジット、サイトのスポンサー欄、SNSでの紹介に社名・ロゴを掲載します。年10万円・30万円・100万円の3プラン。すでに7社が支援しています。",
+        "label": "スポンサー",
+        "h1": "次の1冊に、名前を残す。",
+        "lead": "枡フォトは、{countries}カ国で撮影し、{total}冊の写真集として無料公開しているプロジェクトです。次の1冊は、支えてくださる企業や個人と一緒につくります。その名前は、写真集の中に残ります。",
+        "why_title": "広告ではなく、残るものに名前を",
+        "why": [
+            ("消えない", "広告は期間が終われば消えます。写真集は残ります。日英で公開しているこのアーカイブの中に、プロジェクトが続くかぎり名前が残ります。"),
+            ("文化の文脈で紹介される", "1300年以上の歴史をもつ日本の伝統工芸「枡」を支える企業として紹介されます。広告枠の中ではなく、作品の中に名前が入ります。"),
+            ("海外にも届く", "撮影の中心は海外で、写真集もサイトも日英で公開しています。国内だけでなく、海外の人の目にも触れます。"),
+        ],
+        "credit_title": "名前が載る場所",
+        "credit_caption": "クレジットページの掲載イメージです。実際のデザインはご相談のうえ決めます。",
+        "proof_title": "支援していただくもの",
+        "proof": [
+            ("{total}冊の写真集", "2022年から{countries}カ国で撮影し、400ページを超える写真を、すべて無料で公開しています。"),
+            ("日本国大使館での展示", "FOMUSは、在アイルランド・在バーレーン・在サウジアラビア日本国大使館の行事で、枡を展示してきました。"),
+            ("すでに7社が支援", "工芸・宿・交通・文化など、さまざまな企業がこのシリーズを支えています。"),
+        ],
+        "sponsors_title": "現在のスポンサー",
+        "plans_title": "スポンサープラン",
+        "plans_note": "金額は年間・税込です。写真集への掲載は、ご支援後に出す巻からとなります。",
+        "plans": [
+            ("SUPPORTER", "10万円", "／年", ["全ページから辿れるスポンサー欄に、ロゴとリンクを掲載"]),
+            ("PARTNER", "30万円", "／年", ["上記すべて",
+                                          "その年に出す写真集に、社名・ロゴを掲載",
+                                          "SNSでの紹介"]),
+            ("MAIN PARTNER", "100万円", "／1冊", ["上記すべて",
+                                                "1冊の冠スポンサーとして、巻頭に掲載",
+                                                "スポンサー欄の最上段に掲載"]),
+        ],
+        "flow_title": "ご支援までの流れ",
+        "flow": [("お問い合わせ", "下のフォームから、ご関心のあるプランをお知らせください。"),
+                 ("ご相談", "プラン・時期・掲載の形を一緒に決めます。"),
+                 ("ご支援", "請求書をお送りします。ロゴデータをお預かりします。"),
+                 ("掲載", "サイトのスポンサー欄に掲載し、次の写真集にクレジットを入れます。")],
+        "faq_title": "よくあるご質問",
+        "faq": [
+            ("個人でも支援できますか？", "できます。社名ではなく、お名前での掲載も承ります。"),
+            ("いつから掲載されますか？", "サイトはご支援後すぐ、写真集はその後に出す巻から掲載します。"),
+            ("掲載の期間は？", "SUPPORTERとPARTNERは1年間です。MAIN PARTNERの写真集への掲載は、その巻に残り続けます。"),
+            ("海外の企業でも支援できますか？", "できます。写真集もサイトも、日本語と英語で公開しています。"),
+            ("支援する国の巻を選べますか？", "MAIN PARTNERの場合は、どの巻にするかを一緒に決めます。"),
+        ],
+        "form_title": "スポンサーのお問い合わせ",
+        "form_lead": "メールでご返信します。いただいた情報は、お問い合わせへの対応にのみ使います。",
+        "form": {
+            "name": "お名前", "org": "会社名・団体名", "email": "メールアドレス",
+            "type": "ご関心のあるプラン", "types": ["SUPPORTER（10万円／年）", "PARTNER（30万円／年）",
+                                                "MAIN PARTNER（100万円／1冊）", "まだ決めていない"],
+            "choose": "選択してください", "msg": "ご質問・ご要望",
+            "msg_ph": "ご質問やご要望があればお書きください。",
+            "submit": "送信する", "optional": "任意", "subject": "枡フォト スポンサーのお問い合わせ",
+        },
+    },
+}
+
+
+def sponsor_page(lang, countries, total, ver):
+    fill = lambda t: t.replace("{countries}", str(countries)).replace("{total}", str(total))
+    c = json.loads(fill(json.dumps(SPONSOR[lang], ensure_ascii=False)))
+    f = c["form"]
+    req = '<span class="req">*</span>'
+    opt = f'<span class="opt">{f["optional"]}</span>'
+    root = "../" if lang == "en" else "../../"
+    why = "\n".join(f'''                <article class="info-point">
+                    <h3>{t}</h3>
+                    <p>{d}</p>
+                </article>''' for t, d in c["why"])
+    proof = "\n".join(f'''                <article class="info-card">
+                    <h3>{t}</h3>
+                    <p>{d}</p>
+                </article>''' for t, d in c["proof"])
+    sponsors = "\n".join(
+        (f'                <a class="sponsor-logo" href="{url}" target="_blank" rel="noopener">'
+         if url else '                <div class="sponsor-logo">')
+        + f'<img src="{root}{logo}" width="240" height="240" loading="lazy" alt="{esc(nm)}"><span>{esc(nm)}</span>'
+        + ("</a>" if url else "</div>")
+        for nm, url, logo in SPONSORS)
+    plans = "\n".join(f'''                <article class="plan{' is-main' if i == 1 else ''}">
+                    <p class="plan-name">{nm}</p>
+                    <p class="plan-price">{price}<span>{unit}</span></p>
+                    <ul>{"".join(f"<li>{b}</li>" for b in items)}</ul>
+                    <a class="btn" href="#inquiry">{f["submit"] if lang == "en" else "このプランで相談する"}</a>
+                </article>''' for i, (nm, price, unit, items) in enumerate(c["plans"]))
+    flow = "\n".join(f'''                <li><h3>{t}</h3><p>{d}</p></li>''' for t, d in c["flow"])
+    options = "\n".join(f'                            <option value="{t}">{t}</option>' for t in f["types"])
+    ok_msg = ("Thank you. Your inquiry has been sent — we will reply by email."
+              if lang == "en" else "送信しました。ありがとうございます。メールでご返信します。")
+    ng_msg = (f"Sending failed. Please email us directly at {CONTACT_EMAIL}."
+              if lang == "en" else f"送信に失敗しました。お手数ですが {CONTACT_EMAIL} まで直接ご連絡ください。")
+    body = f'''{crumb_html(lang, c["name"])}
+
+        <section class="info-hero" data-animate>
+            <p class="label">{c["label"]}</p>
+            <h1>{c["h1"]}</h1>
+            <p class="info-lead">{c["lead"]}</p>
+            <a class="btn" href="#plans">{"See the plans" if lang == "en" else "プランを見る"}　↓</a>
+        </section>
+
+        <section class="info-section" data-animate>
+            <h2>{c["why_title"]}</h2>
+            <div class="info-points">
+{why}
+            </div>
+        </section>
+
+        <section class="info-section info-split" data-animate>
+            <div class="info-split-text">
+                <h2>{c["credit_title"]}</h2>
+                <p>{"Your name and logo appear in three places: the credit page of the photo books, the supporters section of this site, and our social media posts." if lang == "en" else "写真集のクレジットページ、サイトのスポンサー欄、SNSでの紹介。この3か所に、社名とロゴを掲載します。"}</p>
+                <p class="info-note">{c["credit_caption"]}</p>
+            </div>
+            <figure class="credit-mock">
+                <img src="{root}sponsor-credit-sm.webp" width="644" height="900" loading="lazy"
+                     alt="{"MASU PHOTO credit page example" if lang == "en" else "枡フォト写真集のクレジットページ掲載イメージ"}">
+            </figure>
+        </section>
+
+        <section class="info-section" data-animate>
+            <h2>{c["proof_title"]}</h2>
+            <div class="info-cards info-cards-3">
+{proof}
+            </div>
+        </section>
+
+        <section class="info-section" data-animate>
+            <h2>{c["sponsors_title"]}</h2>
+            <div class="sponsor-logos">
+{sponsors}
+            </div>
+        </section>
+
+        <section class="info-section" id="plans" data-animate>
+            <h2>{c["plans_title"]}</h2>
+            <div class="plans">
+{plans}
+            </div>
+            <p class="info-note">{c["plans_note"]}</p>
+        </section>
+
+        <section class="info-section" data-animate>
+            <h2>{c["flow_title"]}</h2>
+            <ol class="info-flow">
+{flow}
+            </ol>
+        </section>
+
+        <section class="info-section info-narrow" data-animate>
+            <h2>{c["faq_title"]}</h2>
+            <div class="faq">
+{faq_html(c["faq"])}
+            </div>
+        </section>
+
+        <section class="info-section info-narrow" id="inquiry">
+            <h2>{c["form_title"]}</h2>
+            <p class="info-note">{c["form_lead"]}</p>
+            <form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST"
+                  data-ok="{ok_msg}" data-ng="{ng_msg}">
+                <input type="hidden" name="access_key" value="{FORM_KEY}">
+                <input type="hidden" name="subject" value="{f["subject"]}">
+                <input type="hidden" name="from_name" value="MASU PHOTO">
+                <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+                <div class="fg-row">
+                    <label class="fg"><span class="fg-label">{f["name"]} {req}</span><input type="text" name="name" autocomplete="name" required></label>
+                    <label class="fg"><span class="fg-label">{f["org"]} {opt}</span><input type="text" name="organization" autocomplete="organization"></label>
+                </div>
+                <label class="fg"><span class="fg-label">{f["email"]} {req}</span><input type="email" name="email" autocomplete="email" required></label>
+                <label class="fg"><span class="fg-label">{f["type"]} {req}</span>
+                    <select name="plan" required>
+                        <option value="">{f["choose"]}</option>
+{options}
+                    </select>
+                </label>
+                <label class="fg"><span class="fg-label">{f["msg"]} {opt}</span><textarea name="message" rows="5" placeholder="{f["msg_ph"]}"></textarea></label>
+                <label class="fg-check"><input type="checkbox" name="consent" required><span>{COMMISSION[lang]["form"]["consent"]}</span></label>
+                <button class="btn" type="submit">{f["submit"]}</button>
+                <p class="form-status" role="status" hidden></p>
+            </form>
+        </section>'''
+    url = f"{SITE}/sponsor/" if lang == "en" else f"{SITE}/ja/sponsor/"
+    offers = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": c["h1"],
+        "serviceType": "Sponsorship" if lang == "en" else "スポンサーシップ",
+        "description": c["desc"],
+        "url": url,
+        "provider": ORGANIZATION,
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": c["plans_title"],
+            "itemListElement": [
+                {"@type": "Offer", "name": nm, "price": price.replace("¥", "").replace(",", "").replace("万円", "0000"),
+                 "priceCurrency": "JPY", "description": " / ".join(items)}
+                for nm, price, unit, items in c["plans"]],
+        },
+    }
+    return shell(lang, "sponsor", c["title"], c["desc"], body,
+                 [offers, faq_ld(c["faq"]), breadcrumb(lang, "sponsor", c["name"])], ver)

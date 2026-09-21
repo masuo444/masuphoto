@@ -1199,3 +1199,35 @@ section {
     opacity: 1;
     transform: none;
 }
+
+/* サポーターのロゴに社名とリンクを付ける（2026-09） */
+.sponsor-card {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.sponsor-card span {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-align: center;
+}
+
+a.sponsor-card:hover span { color: var(--gold); }
+
+.sponsors-cta {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 12px 26px;
+    border: 1px solid var(--gold-soft);
+    border-radius: 999px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.sponsors-cta:hover { background: rgba(215, 188, 117, 0.12); }
